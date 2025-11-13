@@ -1,0 +1,9 @@
+:root{--title-size:clamp(48px,10vw,120px)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#000;color:#fff;display:grid;place-items:center;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;overflow:hidden}
+.title{font-size:var(--title-size);font-weight:700;letter-spacing:.06em;text-align:center;z-index:1}
+.star{position:fixed;left:0;top:0;width:var(--sz,2px);height:var(--sz,2px);border-radius:50%;
+  background:radial-gradient(circle,#fff 0 40%,rgba(255,255,255,0) 70%);opacity:0;pointer-events:none;
+  animation:twinkle var(--dur,4s) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:1}}
