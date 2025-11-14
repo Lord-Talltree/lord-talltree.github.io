@@ -17,6 +17,31 @@ body{
   padding:clamp(24px,4vw,72px) clamp(18px,6vw,96px) clamp(140px,12vh,220px);
 }
 .quintessential-regular{font-family:"Quintessential",serif;font-weight:400;font-style:normal}
+.top-banner{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(5,9,20,.7);
+  border-radius:999px;
+  padding:8px 16px;
+  width:max-content;
+  margin:0 auto 18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.logo-slot{
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  border:1px dashed rgba(255,255,255,.35);
+  background:rgba(255,255,255,.04);
+}
+.banner-text{
+  font-size:.85rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 .aurora{
   position:fixed;
   left:50%;
@@ -93,7 +118,7 @@ body{
   position:absolute;
   inset:0;
   border-radius:32px;
-  background:rgba(7,13,30,.53);
+  background:rgba(7,13,30,.48);
   border:1px solid rgba(124,242,255,.25);
   box-shadow:0 30px 80px rgba(0,0,0,.55);
   backdrop-filter:blur(18px);
