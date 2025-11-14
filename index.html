@@ -31,15 +31,15 @@
               <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
             </marker>
             <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
-              <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#0ff" flood-opacity="0.15"/>
+              <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#0ff" flood-opacity="0.2"/>
             </filter>
             <filter id="panelGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#00c2ff" flood-opacity="0.3"/>
+              <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#00c2ff" flood-opacity="0.25"/>
             </filter>
             <style>
               text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
               .node{fill:rgba(6,12,26,.92);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
-              .module-name{fill:#f6fbff;font-size:22px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.04em;transition:opacity .25s ease}
+              .module-name{fill:#f6fbff;font-size:20px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.08em;transition:opacity .25s ease}
               .module-details{fill:#e6f4ff;font-size:16px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.01em;opacity:0;transition:opacity .25s ease}
               .module-details tspan{font-size:14px;font-weight:400}
               .module:hover .module-name,
@@ -95,9 +95,9 @@
             <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M600,1350 C940,1320 1020,1020 880,840"/>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M600,1350 C300,1300 280,1040 320,880"/>
           <circle class="pulse pulseGlow" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1350 C940,1320 1020,1020 880,840"/>
+            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1350 C300,1300 280,1040 320,880"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
           </circle>
           <g transform="translate(280,40)" class="module">
@@ -141,7 +141,10 @@
           </g>
           <g transform="translate(70,500)" class="module left">
             <rect class="node" width="240" height="130"/>
-            <text class="module-name" x="120" y="65">LOGS &amp; ASSUMPTIONS</text>
+            <text class="module-name" x="120" y="55">
+              <tspan x="120" dy="0">LOGS &amp;</tspan>
+              <tspan x="120" dy="20">ASSUMPTIONS</tspan>
+            </text>
             <text class="module-details" x="120" y="65">
               <tspan x="120" dy="-16">Traceable facts + journaling</tspan>
               <tspan x="120" dy="22">Decisions + commitments</tspan>
