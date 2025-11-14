@@ -51,8 +51,8 @@
               .pulse{fill:#fff}
               .pulseGlow{filter:url(#panelGlow)}
               .info-dot{cursor:pointer}
-              .info-dot circle{fill:rgba(255,255,255,.18);stroke:none;filter:url(#panelGlow)}
-              .info-dot .core{fill:#fff;stroke:none}
+              .info-dot circle{fill:none;stroke:rgba(255,255,255,.4);stroke-width:1.6;filter:url(#panelGlow)}
+              .info-dot .core{fill:#7cf2ff;stroke:none}
               @keyframes flow{to{stroke-dashoffset:-1800}}
               @media (prefers-reduced-motion: reduce){
                 .flow{animation:none}
@@ -70,24 +70,14 @@
             <animateMotion dur="10s" repeatCount="indefinite" path="M600,380 L600,500"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M310,565 L430,565"/>
+          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M310,565 L430,565"/>
           <circle class="pulse pulseGlow" r="4">
             <animateMotion dur="9s" repeatCount="indefinite" path="M310,565 L430,565"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M430,545 L310,545"/>
-          <circle class="pulse pulseGlow" r="4">
-            <animateMotion dur="9s" repeatCount="indefinite" path="M430,545 L310,545"/>
-            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
-          </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M770,565 L890,565"/>
+          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M770,565 L890,565"/>
           <circle class="pulse pulseGlow" r="4">
             <animateMotion dur="9s" repeatCount="indefinite" path="M770,565 L890,565"/>
-            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
-          </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M890,545 L770,545"/>
-          <circle class="pulse pulseGlow" r="4">
-            <animateMotion dur="9s" repeatCount="indefinite" path="M890,545 L770,545"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
           </circle>
           <path class="flow" marker-end="url(#arrow)" d="M600,630 L600,770"/>
@@ -105,14 +95,9 @@
             <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M600,1290 C200,1230 120,930 600,840"/>
+          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M600,1230 C220,1110 220,990 600,910"/>
           <circle class="pulse pulseGlow" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1290 C200,1230 120,930 600,840"/>
-            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M600,840 C160,900 100,1210 600,1290"/>
-          <circle class="pulse pulseGlow" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M600,840 C160,900 100,1210 600,1290"/>
+            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1230 C220,1110 220,990 600,910"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
           </circle>
           <g transform="translate(280,40)" class="module">
