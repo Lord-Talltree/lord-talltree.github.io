@@ -24,8 +24,8 @@ body{
   width:160vw;
   height:45vh;
   transform:translateX(-50%);
-  background:radial-gradient(ellipse at 50% 100%,rgba(255,205,164,.18) 0%,rgba(124,242,255,.12) 35%,rgba(0,0,0,0) 70%);
-  opacity:.45;
+  background:radial-gradient(ellipse at 50% 100%,rgba(255,205,164,.12) 0%,rgba(124,242,255,.08) 35%,rgba(0,0,0,0) 70%);
+  opacity:.35;
   filter:blur(42px);
   clip-path:ellipse(85% 60% at 50% 100%);
   pointer-events:none;
@@ -68,7 +68,7 @@ body{
   max-width:780px;
   margin:0 auto clamp(36px,6vw,80px);
   padding:clamp(18px,3vw,42px);
-  text-align:center;
+  text-align:left;
   background:rgba(7,14,32,.65);
   border:1px solid rgba(124,242,255,.2);
   border-radius:28px;

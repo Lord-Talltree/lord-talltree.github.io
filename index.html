@@ -25,7 +25,7 @@
     <section id="diagram" aria-label="Clarion Blueprint">
         <svg viewBox="0 0 1200 1400" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="diagramTitle diagramDesc">
           <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
-          <desc id="diagramDesc">Vertical flow of Clarion modules with hover panels describing each layer.</desc>
+          <desc id="diagramDesc">Vertical Clarion flow from Inputs to Health with hoverable modules that swap names for detailed copy.</desc>
           <defs>
             <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
               <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
@@ -39,187 +39,171 @@
             <style>
               text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
               .node{fill:rgba(6,12,26,.92);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
-              .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central}
-              .flow{fill:none;stroke:rgba(124,242,255,.85);stroke-width:3;stroke-dasharray:10 18;animation:flow 11s linear infinite}
+              .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central;transition:opacity .25s ease}
+              .module-details{fill:#e6f4ff;font-size:16px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.01em;opacity:0;transition:opacity .25s ease}
+              .module-details tspan{font-size:14px;font-weight:400}
+              .module:hover .module-name,
+              .module:focus-within .module-name{opacity:0}
+              .module:hover .module-details,
+              .module:focus-within .module-details{opacity:1}
+              .flow{fill:none;stroke:rgba(124,242,255,.85);stroke-width:3;stroke-dasharray:10 18;stroke-linecap:round;animation:flow 11s linear infinite}
               .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.6}
               .pulse{fill:#fff}
               .pulseGlow{filter:url(#panelGlow)}
               .info-dot{cursor:pointer}
               .info-dot circle{fill:rgba(255,255,255,.18);stroke:none;filter:url(#panelGlow)}
               .info-dot .core{fill:#fff;stroke:none}
-              .info-panel{opacity:0;transition:opacity .25s ease-out}
-              .module:hover .info-panel,
-              .info-dot:focus + .info-panel,
-              .info-dot:focus-visible + .info-panel{opacity:1}
-              .panel-bg{fill:rgba(10,18,34,.85);stroke:rgba(124,242,255,.38);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
-              .panel-text{fill:#f8fbff;font-size:16px;font-weight:400}
               @keyframes flow{to{stroke-dashoffset:-1800}}
               @media (prefers-reduced-motion: reduce){
                 .flow{animation:none}
+                .pulse{display:none}
               }
             </style>
           </defs>
+          <path class="flow" marker-end="url(#arrow)" d="M600,180 L600,250"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M600,180 L600,250"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,380 L600,500"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M600,380 L600,500"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M310,565 L430,565"/>
+          <circle class="pulse pulseGlow" r="4">
+            <animateMotion dur="9s" repeatCount="indefinite" path="M310,565 L430,565"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M770,565 L890,565"/>
+          <circle class="pulse pulseGlow" r="4">
+            <animateMotion dur="9s" repeatCount="indefinite" path="M770,565 L890,565"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,630 L600,770"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,630 L600,770"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,910 L600,1010"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,910 L600,1010"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,1130 L600,1230"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M620,1350 C920,1260 900,1020 640,900"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="16s" repeatCount="indefinite" path="M620,1350 C920,1260 900,1020 640,900"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+          </circle>
           <g transform="translate(280,40)" class="module">
             <rect class="node" width="640" height="140"/>
             <text class="module-name" x="320" y="70">Inputs</text>
-            <g class="info-dot" transform="translate(684,70)" tabindex="0" role="button" aria-label="View Inputs insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(520,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Logos · APIs · Docs · Code</tspan>
-                <tspan x="18" y="66">Streams converge for clarity</tspan>
-                <tspan x="18" y="94">Signal prep + intent tagging</tspan>
-              </text>
+            <text class="module-details" x="320" y="56">
+              <tspan x="320" dy="0">Logos · APIs · Docs · Code</tspan>
+              <tspan x="320" dy="24">Signals converge for clarity</tspan>
+              <tspan x="320" dy="24">Signal prep + intent tagging</tspan>
+            </text>
+            <g class="info-dot" transform="translate(660,24)" tabindex="0" role="button" aria-label="Inputs insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow" marker-end="url(#arrow)" d="M600,200 C600,250 600,260 600,320"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="12s" repeatCount="indefinite" path="M600,200 C600,250 600,260 600,320"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
-          </circle>
-          <g transform="translate(330,240)" class="module">
+          <g transform="translate(330,250)" class="module">
             <rect class="node" width="540" height="130"/>
             <text class="module-name" x="270" y="65">Normalizer</text>
-            <g class="info-dot" transform="translate(580,65)" tabindex="0" role="button" aria-label="View Normalizer insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(500,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Ingest · inspect · first principles</tspan>
-                <tspan x="18" y="66">Assumption surfacing + redlines</tspan>
-                <tspan x="18" y="94">Context scored for fidelity</tspan>
-              </text>
+            <text class="module-details" x="270" y="55">
+              <tspan x="270" dy="0">Ingest · inspect · first principles</tspan>
+              <tspan x="270" dy="24">Surface assumptions + redlines</tspan>
+              <tspan x="270" dy="24">Context scored for fidelity</tspan>
+            </text>
+            <g class="info-dot" transform="translate(560,22)" tabindex="0" role="button" aria-label="Normalizer insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow" marker-end="url(#arrow)" d="M600,370 C600,420 600,440 600,480"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="10s" repeatCount="indefinite" path="M600,370 C600,420 600,440 600,480"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite"/>
-          </circle>
-          <g transform="translate(430,430)" class="module">
-            <rect class="node" width="340" height="120"/>
-            <text class="module-name" x="170" y="60">Meta Agent</text>
-            <g class="info-dot" transform="translate(380,60)" tabindex="0" role="button" aria-label="View Meta Agent insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(320,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Global context radar</tspan>
-                <tspan x="18" y="66">Plan audits + assumption drift</tspan>
-                <tspan x="18" y="94">Emergent directives</tspan>
-              </text>
+          <g transform="translate(430,500)" class="module">
+            <rect class="node" width="340" height="130"/>
+            <text class="module-name" x="170" y="65">Meta Agent</text>
+            <text class="module-details" x="170" y="55">
+              <tspan x="170" dy="0">Global context radar</tspan>
+              <tspan x="170" dy="24">Plan audits + drift watch</tspan>
+              <tspan x="170" dy="24">Emergent directives</tspan>
+            </text>
+            <g class="info-dot" transform="translate(360,22)" tabindex="0" role="button" aria-label="Meta Agent insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <g transform="translate(70,430)" class="module left">
-            <rect class="node" width="240" height="120"/>
-            <text class="module-name" x="120" y="60">Logs &amp; Assumptions</text>
-            <g class="info-dot" transform="translate(268,60)" tabindex="0" role="button" aria-label="View Logs and Assumptions insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(-20,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Traceable facts + journaling</tspan>
-                <tspan x="18" y="66">Decisions + commitments</tspan>
-                <tspan x="18" y="94">Context window reuse</tspan>
-              </text>
+          <g transform="translate(70,500)" class="module left">
+            <rect class="node" width="240" height="130"/>
+            <text class="module-name" x="120" y="65">Logs &amp; Assumptions</text>
+            <text class="module-details" x="120" y="55">
+              <tspan x="120" dy="0">Traceable facts + journaling</tspan>
+              <tspan x="120" dy="24">Decisions + commitments</tspan>
+              <tspan x="120" dy="24">Context reuse playlists</tspan>
+            </text>
+            <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Logs insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <g transform="translate(890,430)" class="module">
-            <rect class="node" width="240" height="120"/>
-            <text class="module-name" x="120" y="60">Task Map</text>
-            <g class="info-dot" transform="translate(268,60)" tabindex="0" role="button" aria-label="View Task Map insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(-320,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Live dependency graph</tspan>
-                <tspan x="18" y="66">Scopes + horizons + SLAs</tspan>
-                <tspan x="18" y="94">Heatmap of blockers</tspan>
-              </text>
+          <g transform="translate(890,500)" class="module">
+            <rect class="node" width="240" height="130"/>
+            <text class="module-name" x="120" y="65">Task Map</text>
+            <text class="module-details" x="120" y="55">
+              <tspan x="120" dy="0">Live dependency graph</tspan>
+              <tspan x="120" dy="24">Scopes · horizons · SLAs</tspan>
+              <tspan x="120" dy="24">Blocker heatmap</tspan>
+            </text>
+            <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Task map insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M310,490 C230,490 180,540 150,540"/>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M890,490 C970,490 1020,540 1070,540"/>
-          <path class="flow" marker-end="url(#arrow)" d="M600,520 C600,580 600,600 600,660"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="11s" repeatCount="indefinite" path="M600,520 C600,580 600,600 600,660"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.4s" repeatCount="indefinite"/>
-          </circle>
-          <g transform="translate(320,630)" class="module">
+          <g transform="translate(320,770)" class="module">
             <rect class="node" width="560" height="140"/>
             <text class="module-name" x="280" y="70">Orchestrator</text>
-            <g class="info-dot" transform="translate(600,70)" tabindex="0" role="button" aria-label="View Orchestrator insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(520,-10)">
-              <rect class="panel-bg" width="280" height="150"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Plan → tasks sequencing</tspan>
-                <tspan x="18" y="66">Scheduling + policy guardrails</tspan>
-                <tspan x="18" y="94">Multi-agent routing + recovery</tspan>
-                <tspan x="18" y="122">Energy budget + prioritization</tspan>
-              </text>
+            <text class="module-details" x="280" y="54">
+              <tspan x="280" dy="0">Plan → task sequencing</tspan>
+              <tspan x="280" dy="24">Scheduling + guardrails</tspan>
+              <tspan x="280" dy="24">Routing · recovery · prioritization</tspan>
+            </text>
+            <g class="info-dot" transform="translate(580,24)" tabindex="0" role="button" aria-label="Orchestrator insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow" marker-end="url(#arrow)" d="M600,770 C600,820 600,840 600,900"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="12s" repeatCount="indefinite" path="M600,770 C600,820 600,840 600,900"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.7s" repeatCount="indefinite"/>
-          </circle>
-          <g transform="translate(360,860)" class="module">
+          <g transform="translate(360,1010)" class="module">
             <rect class="node" width="480" height="120"/>
             <text class="module-name" x="240" y="60">Agents</text>
-            <g class="info-dot" transform="translate(520,60)" tabindex="0" role="button" aria-label="View Agents insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(440,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Code · data · UI · docs · integration</tspan>
-                <tspan x="18" y="66">Healing + escalation patterns</tspan>
-                <tspan x="18" y="94">User-grade deliverables</tspan>
-              </text>
+            <text class="module-details" x="240" y="50">
+              <tspan x="240" dy="0">Code · data · UI · docs · integration</tspan>
+              <tspan x="240" dy="24">Auto-healing + escalation</tspan>
+              <tspan x="240" dy="24">User-grade deliverables</tspan>
+            </text>
+            <g class="info-dot" transform="translate(500,20)" tabindex="0" role="button" aria-label="Agents insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow" marker-end="url(#arrow)" d="M600,980 C600,1030 600,1040 600,1100"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="11s" repeatCount="indefinite" path="M600,980 C600,1030 600,1040 600,1100"/>
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
-          </circle>
-          <g transform="translate(380,1040)" class="module">
+          <g transform="translate(380,1230)" class="module">
             <rect class="node" width="440" height="120"/>
             <text class="module-name" x="220" y="60">Health &amp; Tests</text>
-            <g class="info-dot" transform="translate(500,60)" tabindex="0" role="button" aria-label="View Health and Tests insight" focusable="true">
-              <circle r="12"/>
-              <circle class="core" r="4"/>
-            </g>
-            <g class="info-panel" transform="translate(420,-10)">
-              <rect class="panel-bg" width="280" height="130"/>
-              <text class="panel-text">
-                <tspan x="18" y="38">Deterministic checks + telemetry</tspan>
-                <tspan x="18" y="66">Runbook metrics + trendlines</tspan>
-                <tspan x="18" y="94">Feedback loop to orchestrator</tspan>
-              </text>
+            <text class="module-details" x="220" y="50">
+              <tspan x="220" dy="0">Deterministic checks + telemetry</tspan>
+              <tspan x="220" dy="24">Runbook metrics + trendlines</tspan>
+              <tspan x="220" dy="24">Feedback loop to orchestrator</tspan>
+            </text>
+            <g class="info-dot" transform="translate(460,20)" tabindex="0" role="button" aria-label="Health insight" focusable="true">
+              <circle r="9"/>
+              <circle class="core" r="3"/>
             </g>
           </g>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M620,1150 C900,1100 900,900 650,840"/>
-          <circle class="pulse pulseGlow" r="6">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M620,1150 C900,1100 900,900 650,840"/>
-            <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
-          </circle>
         </svg>
       </section>
   </main>
