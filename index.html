@@ -30,6 +30,9 @@
             <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
               <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
             </marker>
+            <marker id="arrowReverse" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+              <path d="M10,0 L0,5 L10,10 z" fill="#7cf2ff"/>
+            </marker>
             <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
               <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#0ff" flood-opacity="0.2"/>
             </filter>
@@ -52,7 +55,7 @@
               .pulseGlow{filter:url(#panelGlow)}
               .info-dot{cursor:pointer}
               .info-dot circle{fill:none;stroke:rgba(255,255,255,.4);stroke-width:1.6;filter:url(#panelGlow)}
-              .info-dot .core{fill:#7cf2ff;stroke:none}
+              .info-dot .core{fill:#bdfdff;stroke:none}
               @keyframes flow{to{stroke-dashoffset:-1800}}
               @media (prefers-reduced-motion: reduce){
                 .flow{animation:none}
@@ -70,12 +73,12 @@
             <animateMotion dur="10s" repeatCount="indefinite" path="M600,380 L600,500"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M310,565 L430,565"/>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M310,565 L430,565"/>
           <circle class="pulse pulseGlow" r="4">
             <animateMotion dur="9s" repeatCount="indefinite" path="M310,565 L430,565"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M770,565 L890,565"/>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M770,565 L890,565"/>
           <circle class="pulse pulseGlow" r="4">
             <animateMotion dur="9s" repeatCount="indefinite" path="M770,565 L890,565"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
@@ -95,9 +98,9 @@
             <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-start="url(#arrow)" marker-end="url(#arrow)" d="M600,1230 C220,1110 220,990 600,910"/>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M380,1290 C180,1170 160,950 320,840"/>
           <circle class="pulse pulseGlow" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1230 C220,1110 220,990 600,910"/>
+            <animateMotion dur="16s" repeatCount="indefinite" path="M380,1290 C180,1170 160,950 320,840"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
           </circle>
           <g transform="translate(280,40)" class="module">
@@ -109,7 +112,7 @@
               <tspan x="320" dy="22">Signal prep + intent tagging</tspan>
             </text>
             <g class="info-dot" transform="translate(660,24)" tabindex="0" role="button" aria-label="Inputs insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -122,7 +125,7 @@
               <tspan x="270" dy="22">Context scored for fidelity</tspan>
             </text>
             <g class="info-dot" transform="translate(560,22)" tabindex="0" role="button" aria-label="Normalizer insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -135,7 +138,7 @@
               <tspan x="170" dy="22">Emergent directives</tspan>
             </text>
             <g class="info-dot" transform="translate(360,22)" tabindex="0" role="button" aria-label="Meta Agent insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -151,7 +154,7 @@
               <tspan x="120" dy="22">Context reuse playlists</tspan>
             </text>
             <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Logs insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -164,7 +167,7 @@
               <tspan x="120" dy="22">Blocker heatmap</tspan>
             </text>
             <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Task map insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -178,7 +181,7 @@
               <tspan x="280" dy="20">Energy + focus budgets</tspan>
             </text>
             <g class="info-dot" transform="translate(580,24)" tabindex="0" role="button" aria-label="Orchestrator insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -191,7 +194,7 @@
               <tspan x="240" dy="22">User-grade deliverables</tspan>
             </text>
             <g class="info-dot" transform="translate(500,20)" tabindex="0" role="button" aria-label="Agents insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
@@ -204,7 +207,7 @@
               <tspan x="220" dy="22">Feedback loop to orchestrator</tspan>
             </text>
             <g class="info-dot" transform="translate(460,20)" tabindex="0" role="button" aria-label="Health insight" focusable="true">
-              <circle r="9"/>
+              <circle r="7"/>
               <circle class="core" r="3"/>
             </g>
           </g>
