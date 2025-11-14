@@ -16,42 +16,25 @@
     <div class="masthead">
       <p class="eyebrow">Reasoning OS Blueprint</p>
       <h1 class="title quintessential-regular">Clarion</h1>
-      <p class="subtitle">Futuristic orchestration for agents, automations, and live intelligence.</p>
     </div>
     <nav class="nav">
       <a href="https://github.com/Lord-Talltree/lord-talltree.github.io" class="nav-link" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
   <main class="content">
-    <section class="diagram-panel">
-      <div class="diagram-copy">
-        <p>Signals are normalized and reasoned through Clarion&rsquo;s flow, moving from ingestion to metacognition, orchestration, agents, and continuous health checks.</p>
-        <p class="muted-copy">Hover the pulse dots to reveal the detailed contract for each module.</p>
-      </div>
-      <section id="diagram" aria-label="Clarion Blueprint">
+    <section class="hero-intro">
+      <p class="lead">Futuristic orchestration for agents, automations, and live intelligence.</p>
+      <p>Signals are normalized and reasoned through Clarion&rsquo;s flow, moving from ingestion to metacognition, orchestration, agents, and continuous health checks.</p>
+      <p class="muted-copy">Hover the pulse dots to reveal the detailed contract for each module.</p>
+    </section>
+    <section id="diagram" aria-label="Clarion Blueprint">
         <svg viewBox="0 0 1200 1400" role="img" aria-labelledby="diagramTitle diagramDesc">
           <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
           <desc id="diagramDesc">Vertical flow of Clarion modules with hover panels describing each layer.</desc>
           <defs>
             <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="url(#arrowGradient)"/>
+              <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
             </marker>
-            <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#7cf2ff"/>
-              <stop offset="100%" stop-color="#fff"/>
-            </linearGradient>
-            <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(40,191,255,0.24)"/>
-              <stop offset="100%" stop-color="rgba(255,255,255,0.08)"/>
-            </linearGradient>
-            <linearGradient id="nodeAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#7cf2ff"/>
-              <stop offset="100%" stop-color="#b58bff"/>
-            </linearGradient>
-            <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="rgba(13,25,48,0.85)"/>
-              <stop offset="100%" stop-color="rgba(13,25,48,0.35)"/>
-            </linearGradient>
             <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
               <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0ff" flood-opacity="0.15"/>
             </filter>
@@ -60,19 +43,19 @@
             </filter>
             <style>
               text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
-              .node{fill:url(#nodeGradient);stroke:url(#nodeAccent);stroke-width:1.5;rx:28;ry:28;filter:url(#nodeGlow)}
+              .node{fill:rgba(6,12,26,.92);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
               .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central}
-              .flow{fill:none;stroke:url(#nodeAccent);stroke-width:3;stroke-dasharray:10 18;animation:flow 11s linear infinite}
+              .flow{fill:none;stroke:rgba(124,242,255,.85);stroke-width:3;stroke-dasharray:10 18;animation:flow 11s linear infinite}
               .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.7}
               .pulse{fill:#fff}
               .pulseGlow{filter:url(#panelGlow)}
-              .info-dot circle{fill:none;stroke:url(#nodeAccent);stroke-width:1.5}
+              .info-dot circle{fill:none;stroke:rgba(124,242,255,.85);stroke-width:1.5}
               .info-dot .core{fill:#fff;stroke:none}
               .info-panel{opacity:0;transition:opacity .25s ease-out}
               .module:hover .info-panel,
               .info-dot:focus + .info-panel,
               .info-dot:focus-visible + .info-panel{opacity:1}
-              .panel-bg{fill:url(#panelGradient);stroke:rgba(124,242,255,.5);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
+              .panel-bg{fill:rgba(10,18,34,.88);stroke:rgba(124,242,255,.4);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
               .panel-text{fill:#f8fbff;font-size:16px;font-weight:400}
               @keyframes flow{to{stroke-dashoffset:-1800}}
               @media (prefers-reduced-motion: reduce){
@@ -243,7 +226,6 @@
           </circle>
         </svg>
       </section>
-    </section>
   </main>
   <script src="script.js"></script>
 </body>

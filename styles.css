@@ -57,11 +57,6 @@ body{
   line-height:1;
   text-transform:capitalize;
 }
-.subtitle{
-  margin:18px 0 0;
-  font-size:clamp(1rem,1.4vw,1.25rem);
-  color:var(--muted);
-}
 .nav{
   display:flex;
   gap:18px;
@@ -87,25 +82,37 @@ body{
   max-width:1500px;
   margin:0 auto;
 }
-.diagram-panel{
-  display:flex;
-  gap:clamp(24px,4vw,80px);
-  align-items:flex-start;
-  flex-wrap:wrap;
+.hero-intro{
+  max-width:780px;
+  margin:0 auto clamp(36px,6vw,80px);
+  padding:clamp(18px,3vw,42px);
+  text-align:center;
+  background:rgba(7,14,32,.65);
+  border:1px solid rgba(124,242,255,.2);
+  border-radius:28px;
+  box-shadow:0 40px 80px rgba(0,0,0,.45);
+  backdrop-filter:blur(14px);
 }
-.diagram-copy{
-  flex:1 1 260px;
-  max-width:360px;
+.hero-intro p{
+  margin:0 0 1rem;
   font-size:1.05rem;
-  line-height:1.6;
-  color:var(--ink);
+  line-height:1.7;
 }
-.muted-copy{color:var(--muted);font-size:.95rem;margin-top:1rem}
+.hero-intro .lead{
+  font-size:clamp(1.1rem,1.8vw,1.4rem);
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.muted-copy{
+  color:var(--muted);
+  font-size:.95rem;
+  margin-bottom:0;
+}
 #diagram{
-  flex:1 1 60%;
-  max-width:60%;
-  min-width:320px;
-  padding:clamp(16px,2vw,28px);
+  width:clamp(320px,60vw,980px);
+  padding:clamp(20px,3vw,32px);
+  margin:0 auto;
   background:rgba(7,13,30,.58);
   border:1px solid rgba(124,242,255,.25);
   border-radius:32px;
@@ -126,8 +133,8 @@ body{
 }
 @keyframes twinkle{0%,100%{opacity:0}50%{opacity:1}}
 @media (max-width:1100px){
-  .diagram-panel{flex-direction:column}
-  #diagram{max-width:100%}
+  .site-header{flex-direction:column;align-items:flex-start}
+  #diagram{width:100%}
 }
 @media (prefers-reduced-motion: reduce){
   .star{animation:none;opacity:.6}
