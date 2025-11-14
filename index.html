@@ -31,15 +31,15 @@
               <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
             </marker>
             <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
-              <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0ff" flood-opacity="0.15"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#0ff" flood-opacity="0.15"/>
             </filter>
             <filter id="panelGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00c2ff" flood-opacity="0.3"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#00c2ff" flood-opacity="0.3"/>
             </filter>
             <style>
               text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
               .node{fill:rgba(6,12,26,.92);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
-              .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central;transition:opacity .25s ease}
+              .module-name{fill:#f6fbff;font-size:22px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.04em;transition:opacity .25s ease}
               .module-details{fill:#e6f4ff;font-size:16px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.01em;opacity:0;transition:opacity .25s ease}
               .module-details tspan{font-size:14px;font-weight:400}
               .module:hover .module-name,
@@ -95,18 +95,18 @@
             <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
             <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
           </circle>
-          <path class="flow secondary" marker-end="url(#arrow)" d="M620,1350 C920,1260 900,1020 640,900"/>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M600,1350 C940,1320 1020,1020 880,840"/>
           <circle class="pulse pulseGlow" r="5">
-            <animateMotion dur="16s" repeatCount="indefinite" path="M620,1350 C920,1260 900,1020 640,900"/>
+            <animateMotion dur="16s" repeatCount="indefinite" path="M600,1350 C940,1320 1020,1020 880,840"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
           </circle>
           <g transform="translate(280,40)" class="module">
             <rect class="node" width="640" height="140"/>
-            <text class="module-name" x="320" y="70">Inputs</text>
-            <text class="module-details" x="320" y="56">
-              <tspan x="320" dy="0">Logos · APIs · Docs · Code</tspan>
-              <tspan x="320" dy="24">Signals converge for clarity</tspan>
-              <tspan x="320" dy="24">Signal prep + intent tagging</tspan>
+            <text class="module-name" x="320" y="70">INPUTS</text>
+            <text class="module-details" x="320" y="70">
+              <tspan x="320" dy="-16">Logos · APIs · Docs · Code</tspan>
+              <tspan x="320" dy="22">Signals converge for clarity</tspan>
+              <tspan x="320" dy="22">Signal prep + intent tagging</tspan>
             </text>
             <g class="info-dot" transform="translate(660,24)" tabindex="0" role="button" aria-label="Inputs insight" focusable="true">
               <circle r="9"/>
@@ -115,11 +115,11 @@
           </g>
           <g transform="translate(330,250)" class="module">
             <rect class="node" width="540" height="130"/>
-            <text class="module-name" x="270" y="65">Normalizer</text>
-            <text class="module-details" x="270" y="55">
-              <tspan x="270" dy="0">Ingest · inspect · first principles</tspan>
-              <tspan x="270" dy="24">Surface assumptions + redlines</tspan>
-              <tspan x="270" dy="24">Context scored for fidelity</tspan>
+            <text class="module-name" x="270" y="65">NORMALIZER</text>
+            <text class="module-details" x="270" y="65">
+              <tspan x="270" dy="-16">Ingest · inspect · first principles</tspan>
+              <tspan x="270" dy="22">Surface assumptions + redlines</tspan>
+              <tspan x="270" dy="22">Context scored for fidelity</tspan>
             </text>
             <g class="info-dot" transform="translate(560,22)" tabindex="0" role="button" aria-label="Normalizer insight" focusable="true">
               <circle r="9"/>
@@ -128,11 +128,11 @@
           </g>
           <g transform="translate(430,500)" class="module">
             <rect class="node" width="340" height="130"/>
-            <text class="module-name" x="170" y="65">Meta Agent</text>
-            <text class="module-details" x="170" y="55">
-              <tspan x="170" dy="0">Global context radar</tspan>
-              <tspan x="170" dy="24">Plan audits + drift watch</tspan>
-              <tspan x="170" dy="24">Emergent directives</tspan>
+            <text class="module-name" x="170" y="65">META AGENT</text>
+            <text class="module-details" x="170" y="65">
+              <tspan x="170" dy="-16">Global context radar</tspan>
+              <tspan x="170" dy="22">Plan audits + drift watch</tspan>
+              <tspan x="170" dy="22">Emergent directives</tspan>
             </text>
             <g class="info-dot" transform="translate(360,22)" tabindex="0" role="button" aria-label="Meta Agent insight" focusable="true">
               <circle r="9"/>
@@ -141,11 +141,11 @@
           </g>
           <g transform="translate(70,500)" class="module left">
             <rect class="node" width="240" height="130"/>
-            <text class="module-name" x="120" y="65">Logs &amp; Assumptions</text>
-            <text class="module-details" x="120" y="55">
-              <tspan x="120" dy="0">Traceable facts + journaling</tspan>
-              <tspan x="120" dy="24">Decisions + commitments</tspan>
-              <tspan x="120" dy="24">Context reuse playlists</tspan>
+            <text class="module-name" x="120" y="65">LOGS &amp; ASSUMPTIONS</text>
+            <text class="module-details" x="120" y="65">
+              <tspan x="120" dy="-16">Traceable facts + journaling</tspan>
+              <tspan x="120" dy="22">Decisions + commitments</tspan>
+              <tspan x="120" dy="22">Context reuse playlists</tspan>
             </text>
             <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Logs insight" focusable="true">
               <circle r="9"/>
@@ -154,11 +154,11 @@
           </g>
           <g transform="translate(890,500)" class="module">
             <rect class="node" width="240" height="130"/>
-            <text class="module-name" x="120" y="65">Task Map</text>
-            <text class="module-details" x="120" y="55">
-              <tspan x="120" dy="0">Live dependency graph</tspan>
-              <tspan x="120" dy="24">Scopes · horizons · SLAs</tspan>
-              <tspan x="120" dy="24">Blocker heatmap</tspan>
+            <text class="module-name" x="120" y="65">TASK MAP</text>
+            <text class="module-details" x="120" y="65">
+              <tspan x="120" dy="-16">Live dependency graph</tspan>
+              <tspan x="120" dy="22">Scopes · horizons · SLAs</tspan>
+              <tspan x="120" dy="22">Blocker heatmap</tspan>
             </text>
             <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Task map insight" focusable="true">
               <circle r="9"/>
@@ -167,11 +167,12 @@
           </g>
           <g transform="translate(320,770)" class="module">
             <rect class="node" width="560" height="140"/>
-            <text class="module-name" x="280" y="70">Orchestrator</text>
-            <text class="module-details" x="280" y="54">
-              <tspan x="280" dy="0">Plan → task sequencing</tspan>
-              <tspan x="280" dy="24">Scheduling + guardrails</tspan>
-              <tspan x="280" dy="24">Routing · recovery · prioritization</tspan>
+            <text class="module-name" x="280" y="70">ORCHESTRATOR</text>
+            <text class="module-details" x="280" y="70">
+              <tspan x="280" dy="-24">Plan → task sequencing</tspan>
+              <tspan x="280" dy="20">Scheduling + guardrails</tspan>
+              <tspan x="280" dy="20">Routing · recovery · prioritization</tspan>
+              <tspan x="280" dy="20">Energy + focus budgets</tspan>
             </text>
             <g class="info-dot" transform="translate(580,24)" tabindex="0" role="button" aria-label="Orchestrator insight" focusable="true">
               <circle r="9"/>
@@ -180,11 +181,11 @@
           </g>
           <g transform="translate(360,1010)" class="module">
             <rect class="node" width="480" height="120"/>
-            <text class="module-name" x="240" y="60">Agents</text>
-            <text class="module-details" x="240" y="50">
-              <tspan x="240" dy="0">Code · data · UI · docs · integration</tspan>
-              <tspan x="240" dy="24">Auto-healing + escalation</tspan>
-              <tspan x="240" dy="24">User-grade deliverables</tspan>
+            <text class="module-name" x="240" y="60">AGENTS</text>
+            <text class="module-details" x="240" y="60">
+              <tspan x="240" dy="-16">Code · data · UI · docs · integration</tspan>
+              <tspan x="240" dy="22">Auto-healing + escalation</tspan>
+              <tspan x="240" dy="22">User-grade deliverables</tspan>
             </text>
             <g class="info-dot" transform="translate(500,20)" tabindex="0" role="button" aria-label="Agents insight" focusable="true">
               <circle r="9"/>
@@ -193,11 +194,11 @@
           </g>
           <g transform="translate(380,1230)" class="module">
             <rect class="node" width="440" height="120"/>
-            <text class="module-name" x="220" y="60">Health &amp; Tests</text>
-            <text class="module-details" x="220" y="50">
-              <tspan x="220" dy="0">Deterministic checks + telemetry</tspan>
-              <tspan x="220" dy="24">Runbook metrics + trendlines</tspan>
-              <tspan x="220" dy="24">Feedback loop to orchestrator</tspan>
+            <text class="module-name" x="220" y="60">HEALTH &amp; TESTS</text>
+            <text class="module-details" x="220" y="60">
+              <tspan x="220" dy="-16">Deterministic checks + telemetry</tspan>
+              <tspan x="220" dy="22">Runbook metrics + trendlines</tspan>
+              <tspan x="220" dy="22">Feedback loop to orchestrator</tspan>
             </text>
             <g class="info-dot" transform="translate(460,20)" tabindex="0" role="button" aria-label="Health insight" focusable="true">
               <circle r="9"/>

@@ -1,5 +1,5 @@
 :root{
-  --title-size:clamp(56px,9vw,140px);
+  --title-size:clamp(48px,8vw,110px);
   --ink:#f8fbff;
   --muted:rgba(248,251,255,.65);
   --panel:rgba(17,24,45,.65);
@@ -24,8 +24,8 @@ body{
   width:160vw;
   height:45vh;
   transform:translateX(-50%);
-  background:radial-gradient(ellipse at 50% 100%,rgba(255,205,164,.12) 0%,rgba(124,242,255,.08) 35%,rgba(0,0,0,0) 70%);
-  opacity:.35;
+  background:radial-gradient(ellipse at 50% 100%,rgba(255,205,164,.17) 0%,rgba(124,242,255,.13) 35%,rgba(0,0,0,0) 70%);
+  opacity:.4;
   filter:blur(42px);
   clip-path:ellipse(85% 60% at 50% 100%);
   pointer-events:none;
