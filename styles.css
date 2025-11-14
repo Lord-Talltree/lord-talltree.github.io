@@ -86,11 +86,13 @@ body{
 }
 .tagline{
   margin:.6rem 0 0;
-  font-size:1rem;
+  font-size:.85rem;
   letter-spacing:.35em;
   text-transform:uppercase;
   color:var(--muted);
+  text-decoration:underline;
 }
+.top-banner{z-index:3;position:relative}
 .content{
   width:100%;
   max-width:1500px;
