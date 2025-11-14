@@ -1,35 +1,60 @@
-:root{--title-size:clamp(48px,10vw,120px);--ink:#fff;--muted:rgba(255,255,255,.6)}
+:root{
+  --title-size:clamp(48px,10vw,120px);
+  --ink:#fff;
+  --muted:rgba(255,255,255,.7);
+}
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;min-height:100vh;position:relative;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Inter,system-ui,sans-serif;overflow:hidden}
-.quintessential-regular{font-family:"Quintessential",serif;font-weight:400;font-style:normal}
-.title{position:absolute;top:30vh;left:50%;transform:translate(-50%,-50%);font-size:var(--title-size);font-weight:400;letter-spacing:.04em;text-align:center;z-index:1;font-family:"Quintessential",serif}
-
-/* Star field */
-.star{position:fixed;width:var(--sz,2px);height:var(--sz,2px);border-radius:50%;left:0;top:0;
-  background:radial-gradient(circle,#fff 0 40%,rgba(255,255,255,0) 70%);opacity:0;pointer-events:none;
-  animation:twinkle var(--dur,4s) ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:0}50%{opacity:1}}
-
-/* Diagram layout */
-#diagram{position:relative;z-index:1;margin-top:38vh}
-#diagram svg{width:100%;height:auto;display:block}
-.label{fill:var(--ink);font:600 16px/1.2 Inter,system-ui,sans-serif;letter-spacing:.02em}
-.label.small{font-weight:500;font-size:14px}
-.label.center{text-anchor:middle}
-.box,.funnel,.icon{fill:none;stroke:var(--ink);stroke-width:2}
-.box.thin{stroke-width:1.5}
-.funnel{stroke-width:2.5}
-.iconText{fill:#000;paint-order:stroke;stroke:#000;stroke-width:4;stroke-linejoin:round;font:700 12px/1 Inter,system-ui,sans-serif;text-anchor:middle}
-.icon{fill:rgba(255,255,255,.08)}
-
-/* Flow lines */
-.flowline{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 10;animation:flow 5s linear infinite}
-.seq1{animation-delay:0s}.seq2{animation-delay:.4s}.seq3{animation-delay:.8s}.seq4{animation-delay:1.2s}.seq5{animation-delay:1.6s}
-@keyframes flow{to{stroke-dashoffset:-1000}}
-
-/* Accessibility: reduce motion */
-@media (prefers-reduced-motion: reduce){
-  .star{animation:none;opacity:.6}
-  .flowline{animation:none}
+body{
+  margin:0;
+  min-height:100vh;
+  position:relative;
+  background:#000;
+  color:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Inter,system-ui,sans-serif;
+  overflow-x:hidden;
 }
+.quintessential-regular{font-family:"Quintessential",serif;font-weight:400;font-style:normal}
+.site-header{
+  position:relative;
+  height:20vh;
+  min-height:140px;
+  display:grid;
+  place-items:center;
+}
+.title{
+  position:absolute;
+  top:12vh;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:var(--title-size);
+  font-weight:400;
+  letter-spacing:.04em;
+  text-align:center;
+  z-index:2;
+  font-family:"Quintessential",serif;
+}
+.nav{
+  position:absolute;
+  top:18px;
+  right:24px;
+  display:flex;
+  gap:18px;
+}
+.nav-link{color:#fff;text-decoration:none;opacity:.8}
+.nav-link:hover{text-decoration:underline;opacity:1}
+#diagram{position:relative;z-index:1;min-height:80vh;margin-top:0;display:flex;align-items:flex-start;justify-content:center}
+#diagram svg{width:min(1200px,92vw);height:auto;display:block;margin:0 auto}
+.star{
+  position:fixed;
+  width:var(--sz,2px);
+  height:var(--sz,2px);
+  border-radius:50%;
+  left:0;top:0;
+  background:radial-gradient(circle,#fff 0 40%,rgba(255,255,255,0) 70%);
+  opacity:0;
+  pointer-events:none;
+  animation:twinkle var(--dur,5.2s) ease-in-out infinite;
+}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:1}}
+@media (prefers-reduced-motion: reduce){.star{animation:none;opacity:.6}}

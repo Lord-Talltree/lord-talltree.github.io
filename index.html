@@ -11,132 +11,114 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 class="title quintessential-regular">Clarion</h1>
-
-  <!-- Blueprint Diagram -->
+  <header class="site-header">
+    <h1 class="title quintessential-regular">Clarion</h1>
+    <nav class="nav">
+      <a href="https://github.com/Lord-Talltree/lord-talltree.github.io" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
   <section id="diagram" aria-label="Clarion Blueprint">
-    <svg viewBox="0 0 1200 700" role="img" aria-labelledby="diagramTitle diagramDesc">
+    <svg viewBox="0 0 1200 1400" role="img" aria-labelledby="diagramTitle diagramDesc">
       <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
-      <desc id="diagramDesc">Inputs converge to a Normalizer, then to a Meta Agent, Orchestrator, Agents, and Health & Tests. Task Map and Logs/Assumptions connect alongside.</desc>
-
-      <!-- Defs: markers and glow -->
+      <desc id="diagramDesc">Top-down flow from Inputs to Normalizer, Meta Agent, Task Map, Orchestrator, Agents, and Health & Tests with heartbeat flow.</desc>
       <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M0,0 L10,5 L0,10 z" fill="#fff"/>
         </marker>
-        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.35"/>
         </filter>
+        <style>
+          .box{fill:rgba(255,255,255,.04);stroke:#fff;stroke-width:2}
+          .capsule{rx:24;ry:24}
+          .label{fill:#fff;font:600 18px/1.2 Inter,system-ui,sans-serif;letter-spacing:.02em}
+          .label.center{text-anchor:middle}
+          .muted{fill:rgba(255,255,255,.7);font:500 14px/1.2 Inter,system-ui,sans-serif;text-anchor:middle}
+          .funnel{fill:none;stroke:#fff;stroke-width:3}
+          .flow{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:8 14;animation:flow 9s linear infinite}
+          .flow.slow{animation-duration:12s}
+          @keyframes flow{to{stroke-dashoffset:-1400}}
+          .pulse{fill:#fff}
+          .pulseGlow{filter:url(#glow)}
+          @media (prefers-reduced-motion: reduce){.flow{animation:none}.pulse{display:none}}
+        </style>
       </defs>
-
-      <!-- INPUT ICONS (abstract in lieu of real logos) -->
-      <g class="module" transform="translate(40,90)">
-        <title>Inputs — Logos/APIs/Docs/Code</title>
-        <text x="0" y="-18" class="label">Inputs</text>
-        <g class="inputIcon" transform="translate(0,0)">
-          <circle cx="40" cy="40" r="24" class="icon"/>
-          <text x="40" y="46" class="iconText">API</text>
-        </g>
-        <g class="inputIcon" transform="translate(0,90)">
-          <rect x="16" y="16" width="48" height="48" rx="8" class="icon"/>
-          <text x="40" y="48" class="iconText">LLM</text>
-        </g>
-        <g class="inputIcon" transform="translate(0,180)">
-          <circle cx="40" cy="40" r="24" class="icon"/>
-          <text x="40" y="46" class="iconText">DOC</text>
-        </g>
-        <g class="inputIcon" transform="translate(0,270)">
-          <rect x="16" y="16" width="48" height="48" rx="8" class="icon"/>
-          <text x="40" y="48" class="iconText">CODE</text>
-        </g>
+      <g transform="translate(150,80)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="900" height="120" rx="24" ry="24"/>
+        <text class="label center" x="450" y="55">Inputs — Logos · APIs · Docs · Code</text>
+        <text class="muted" x="450" y="90">Signals Converge For Clarification</text>
       </g>
-
-      <!-- FUNNEL / NORMALIZER -->
-      <g class="module" transform="translate(330,210)">
-        <title>Normalizer — ingest, inspect, first-principles framing, assumption declaration, comparison & alignment</title>
-        <polygon points="0,0 200,0 170,100 30,100" class="funnel" filter="url(#softGlow)"/>
-        <text x="100" y="50" class="label center">Normalizer</text>
+      <path class="flow slow" marker-end="url(#arrow)" d="M600,200 C600,240 600,260 600,300"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="10s" repeatCount="indefinite" path="M600,200 C600,240 600,260 600,300"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(350,300)">
+        <path class="funnel" d="M0,0 Q250,0 500,0 L420,120 Q250,170 80,120 Z" filter="url(#glow)"/>
+        <text class="label center" x="250" y="90">Normalizer</text>
+        <text class="muted" x="250" y="115">Ingest · Inspect · First-Principles · Assumptions</text>
       </g>
-
-      <!-- META AGENT -->
-      <g class="module" transform="translate(560,220)">
-        <title>Meta Agent — maintains global context, checks plans/assumptions, audits milestones, logs emergent assumptions</title>
-        <rect x="0" y="0" width="210" height="90" rx="12" class="box" filter="url(#softGlow)"/>
-        <text x="105" y="52" class="label center">Meta Agent</text>
+      <path class="flow" marker-end="url(#arrow)" d="M600,460 C600,500 600,520 600,560"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="9s" repeatCount="indefinite" path="M600,460 C600,500 600,520 600,560"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(400,560)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="400" height="110" rx="24" ry="24"/>
+        <text class="label center" x="200" y="55">Meta Agent</text>
+        <text class="muted" x="200" y="82">Global Context · Plan Review · Audits · Emergent Assumptions</text>
       </g>
-
-      <!-- LOGS & ASSUMPTIONS (above Meta) -->
-      <g class="module" transform="translate(560,80)">
-        <title>Logs & Assumptions — explicit assumptions, decisions, and context ledger</title>
-        <rect x="0" y="0" width="210" height="80" rx="12" class="box thin" filter="url(#softGlow)"/>
-        <text x="105" y="46" class="label center">Logs &amp; Assumptions</text>
+      <g transform="translate(70,560)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="260" height="110" rx="24" ry="24"/>
+        <text class="label center" x="130" y="55">Logs &amp; Assumptions</text>
       </g>
-
-      <!-- TASK MAP (below Meta) -->
-      <g class="module" transform="translate(560,360)">
-        <title>Task Map — goals, milestones, working assumptions; shared by Meta Agent & Orchestrator</title>
-        <rect x="0" y="0" width="210" height="90" rx="12" class="box thin" filter="url(#softGlow)"/>
-        <text x="105" y="52" class="label center">Task Map</text>
+      <g transform="translate(870,560)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="260" height="110" rx="24" ry="24"/>
+        <text class="label center" x="130" y="55">Task Map</text>
       </g>
-
-      <!-- ORCHESTRATOR -->
-      <g class="module" transform="translate(820,220)">
-        <title>Orchestrator — turns plans into agent tasks, sequences milestones, monitors execution</title>
-        <rect x="0" y="0" width="230" height="90" rx="12" class="box" filter="url(#softGlow)"/>
-        <text x="115" y="52" class="label center">Orchestrator</text>
+      <path class="flow slow" marker-end="url(#arrow)" d="M400,615 C320,615 260,615 200,615"/>
+      <path class="flow slow" marker-end="url(#arrow)" d="M800,615 C880,615 940,615 1000,615"/>
+      <path class="flow" marker-end="url(#arrow)" d="M600,670 C600,730 600,760 600,820"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="9s" repeatCount="indefinite" path="M600,670 C600,730 600,760 600,820"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(300,820)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="600" height="110" rx="24" ry="24"/>
+        <text class="label center" x="300" y="55">Orchestrator</text>
+        <text class="muted" x="300" y="82">Plan → Tasks · Scheduling · Policy Guardrails · Agent Routing</text>
       </g>
-
-      <!-- AGENTS POOL -->
-      <g class="module" transform="translate(1080,120)">
-        <title>Agents Pool — specialized executors for code, data, UI, docs, integration, healing</title>
-        <rect x="0" y="0" width="100" height="70" rx="10" class="box thin"/>
-        <text x="50" y="42" class="label center small">Agent A</text>
-        <rect x="0" y="100" width="100" height="70" rx="10" class="box thin"/>
-        <text x="50" y="142" class="label center small">Agent B</text>
-        <rect x="0" y="200" width="100" height="70" rx="10" class="box thin"/>
-        <text x="50" y="242" class="label center small">Agent C</text>
+      <path class="flow slow" marker-end="url(#arrow)" d="M600,930 C600,980 600,1000 600,1050"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="12s" repeatCount="indefinite" path="M600,930 C600,980 600,1000 600,1050"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(430,1050)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="340" height="90" rx="24" ry="24"/>
+        <text class="label center" x="170" y="50">Agents · Code · Data · UI · Docs · Integration · Healing</text>
       </g>
-
-      <!-- HEALTH & TESTS -->
-      <g class="module" transform="translate(820,360)">
-        <title>Health & Tests — containerized checks, healing agents compare against assumptions</title>
-        <rect x="0" y="0" width="230" height="90" rx="12" class="box thin" filter="url(#softGlow)"/>
-        <text x="115" y="52" class="label center">Health &amp; Tests</text>
+      <path class="flow slow" marker-end="url(#arrow)" d="M600,1140 C600,1180 600,1200 600,1240"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="12s" repeatCount="indefinite" path="M600,1140 C600,1180 600,1200 600,1240"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(410,1240)">
+        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="380" height="100" rx="24" ry="24"/>
+        <text class="label center" x="190" y="55">Health &amp; Tests</text>
       </g>
-
-      <!-- FLOW LINES (animated stroke-dashoffset) -->
-      <!-- Inputs -> Normalizer (fan-in) -->
-      <path class="flowline seq1" marker-end="url(#arrow)" d="M120,130 C220,130 260,170 330,220"/>
-      <path class="flowline seq1" marker-end="url(#arrow)" d="M120,220 C220,220 260,220 330,220"/>
-      <path class="flowline seq1" marker-end="url(#arrow)" d="M120,310 C220,310 260,270 330,220"/>
-      <path class="flowline seq1" marker-end="url(#arrow)" d="M120,400 C220,400 270,330 330,300"/>
-
-      <!-- Normalizer -> Meta -->
-      <path class="flowline seq2" marker-end="url(#arrow)" d="M530,260 C545,260 550,260 560,265"/>
-
-      <!-- Meta -> Orchestrator -->
-      <path class="flowline seq3" marker-end="url(#arrow)" d="M770,265 C790,265 800,265 820,265"/>
-
-      <!-- Orchestrator -> Agents (split) -->
-      <path class="flowline seq4" marker-end="url(#arrow)" d="M1050,265 C1070,240 1080,210 1080,155"/>
-      <path class="flowline seq4" marker-end="url(#arrow)" d="M1050,265 C1070,265 1080,265 1080,215"/>
-      <path class="flowline seq4" marker-end="url(#arrow)" d="M1050,265 C1070,295 1080,325 1080,315"/>
-
-      <!-- Agents -> Health & Tests -->
-      <path class="flowline seq5" marker-end="url(#arrow)" d="M1130,155 C1120,155 1100,155 1035,400"/>
-      <path class="flowline seq5" marker-end="url(#arrow)" d="M1130,215 C1100,215 1080,260 1035,400"/>
-      <path class="flowline seq5" marker-end="url(#arrow)" d="M1130,315 C1100,315 1080,340 1035,400"/>
-
-      <!-- Meta <-> Task Map & Logs -->
-      <path class="flowline seq2" marker-end="url(#arrow)" d="M665,220 C665,170 665,150 665,120"/>
-      <path class="flowline seq3" marker-end="url(#arrow)" d="M665,310 C665,340 665,360 665,360"/>
-
-      <!-- Orchestrator -> Task Map (reads/writes) -->
-      <path class="flowline seq3" marker-end="url(#arrow)" d="M820,265 C760,265 730,315 665,360"/>
-
+      <path class="flow" marker-end="url(#arrow)" d="M600,1340 C900,1300 900,990 600,930"/>
+      <circle class="pulse pulseGlow" r="5">
+        <animateMotion dur="14s" repeatCount="indefinite" path="M600,1340 C900,1300 900,990 600,930"/>
+        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
     </svg>
   </section>
-
   <script src="script.js"></script>
 </body>
 </html>
