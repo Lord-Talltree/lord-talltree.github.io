@@ -14,21 +14,16 @@
   <div class="aurora" aria-hidden="true"></div>
   <header class="site-header">
     <div class="masthead">
-      <p class="eyebrow">Reasoning OS Blueprint</p>
       <h1 class="title quintessential-regular">Clarion</h1>
+      <p class="tagline">Reasoning OS</p>
     </div>
-    <nav class="nav">
-      <a href="https://github.com/Lord-Talltree/lord-talltree.github.io" class="nav-link" target="_blank" rel="noopener">GitHub</a>
-    </nav>
   </header>
   <main class="content">
     <section class="hero-intro">
-      <p class="lead">Futuristic orchestration for agents, automations, and live intelligence.</p>
-      <p>Signals are normalized and reasoned through Clarion&rsquo;s flow, moving from ingestion to metacognition, orchestration, agents, and continuous health checks.</p>
-      <p class="muted-copy">Hover the pulse dots to reveal the detailed contract for each module.</p>
+      <p>Futuristic orchestration for agents, automations, and live intelligence—signals are normalized, audited, and routed through metacognition, orchestration, delivery agents, and continuous health checks to keep operations adaptive and trustworthy.</p>
     </section>
     <section id="diagram" aria-label="Clarion Blueprint">
-        <svg viewBox="0 0 1200 1400" role="img" aria-labelledby="diagramTitle diagramDesc">
+        <svg viewBox="0 0 1200 1400" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="diagramTitle diagramDesc">
           <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
           <desc id="diagramDesc">Vertical flow of Clarion modules with hover panels describing each layer.</desc>
           <defs>
@@ -46,16 +41,17 @@
               .node{fill:rgba(6,12,26,.92);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
               .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central}
               .flow{fill:none;stroke:rgba(124,242,255,.85);stroke-width:3;stroke-dasharray:10 18;animation:flow 11s linear infinite}
-              .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.7}
+              .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.6}
               .pulse{fill:#fff}
               .pulseGlow{filter:url(#panelGlow)}
-              .info-dot circle{fill:none;stroke:rgba(124,242,255,.85);stroke-width:1.5}
+              .info-dot{cursor:pointer}
+              .info-dot circle{fill:rgba(255,255,255,.18);stroke:none;filter:url(#panelGlow)}
               .info-dot .core{fill:#fff;stroke:none}
               .info-panel{opacity:0;transition:opacity .25s ease-out}
               .module:hover .info-panel,
               .info-dot:focus + .info-panel,
               .info-dot:focus-visible + .info-panel{opacity:1}
-              .panel-bg{fill:rgba(10,18,34,.88);stroke:rgba(124,242,255,.4);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
+              .panel-bg{fill:rgba(10,18,34,.85);stroke:rgba(124,242,255,.38);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
               .panel-text{fill:#f8fbff;font-size:16px;font-weight:400}
               @keyframes flow{to{stroke-dashoffset:-1800}}
               @media (prefers-reduced-motion: reduce){
@@ -66,11 +62,11 @@
           <g transform="translate(280,40)" class="module">
             <rect class="node" width="640" height="140"/>
             <text class="module-name" x="320" y="70">Inputs</text>
-            <g class="info-dot" transform="translate(600,24)" tabindex="0" role="button" aria-label="View Inputs insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(684,70)" tabindex="0" role="button" aria-label="View Inputs insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(660,-10)">
+            <g class="info-panel" transform="translate(520,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Logos · APIs · Docs · Code</tspan>
@@ -87,11 +83,11 @@
           <g transform="translate(330,240)" class="module">
             <rect class="node" width="540" height="130"/>
             <text class="module-name" x="270" y="65">Normalizer</text>
-            <g class="info-dot" transform="translate(500,22)" tabindex="0" role="button" aria-label="View Normalizer insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(580,65)" tabindex="0" role="button" aria-label="View Normalizer insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(560,-10)">
+            <g class="info-panel" transform="translate(500,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Ingest · inspect · first principles</tspan>
@@ -108,11 +104,11 @@
           <g transform="translate(430,430)" class="module">
             <rect class="node" width="340" height="120"/>
             <text class="module-name" x="170" y="60">Meta Agent</text>
-            <g class="info-dot" transform="translate(300,22)" tabindex="0" role="button" aria-label="View Meta Agent insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(380,60)" tabindex="0" role="button" aria-label="View Meta Agent insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(360,-10)">
+            <g class="info-panel" transform="translate(320,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Global context radar</tspan>
@@ -124,11 +120,11 @@
           <g transform="translate(70,430)" class="module left">
             <rect class="node" width="240" height="120"/>
             <text class="module-name" x="120" y="60">Logs &amp; Assumptions</text>
-            <g class="info-dot" transform="translate(200,22)" tabindex="0" role="button" aria-label="View Logs and Assumptions insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(268,60)" tabindex="0" role="button" aria-label="View Logs and Assumptions insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(-300,-10)">
+            <g class="info-panel" transform="translate(-20,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Traceable facts + journaling</tspan>
@@ -140,11 +136,11 @@
           <g transform="translate(890,430)" class="module">
             <rect class="node" width="240" height="120"/>
             <text class="module-name" x="120" y="60">Task Map</text>
-            <g class="info-dot" transform="translate(200,22)" tabindex="0" role="button" aria-label="View Task Map insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(268,60)" tabindex="0" role="button" aria-label="View Task Map insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(260,-10)">
+            <g class="info-panel" transform="translate(-320,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Live dependency graph</tspan>
@@ -163,11 +159,11 @@
           <g transform="translate(320,630)" class="module">
             <rect class="node" width="560" height="140"/>
             <text class="module-name" x="280" y="70">Orchestrator</text>
-            <g class="info-dot" transform="translate(520,24)" tabindex="0" role="button" aria-label="View Orchestrator insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(600,70)" tabindex="0" role="button" aria-label="View Orchestrator insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(580,-10)">
+            <g class="info-panel" transform="translate(520,-10)">
               <rect class="panel-bg" width="280" height="150"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Plan → tasks sequencing</tspan>
@@ -185,11 +181,11 @@
           <g transform="translate(360,860)" class="module">
             <rect class="node" width="480" height="120"/>
             <text class="module-name" x="240" y="60">Agents</text>
-            <g class="info-dot" transform="translate(440,22)" tabindex="0" role="button" aria-label="View Agents insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(520,60)" tabindex="0" role="button" aria-label="View Agents insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(500,-10)">
+            <g class="info-panel" transform="translate(440,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Code · data · UI · docs · integration</tspan>
@@ -206,11 +202,11 @@
           <g transform="translate(380,1040)" class="module">
             <rect class="node" width="440" height="120"/>
             <text class="module-name" x="220" y="60">Health &amp; Tests</text>
-            <g class="info-dot" transform="translate(400,22)" tabindex="0" role="button" aria-label="View Health and Tests insight" focusable="true">
-              <circle r="14" opacity="0.6"/>
+            <g class="info-dot" transform="translate(500,60)" tabindex="0" role="button" aria-label="View Health and Tests insight" focusable="true">
+              <circle r="12"/>
               <circle class="core" r="4"/>
             </g>
-            <g class="info-panel" transform="translate(460,-10)">
+            <g class="info-panel" transform="translate(420,-10)">
               <rect class="panel-bg" width="280" height="130"/>
               <text class="panel-text">
                 <tspan x="18" y="38">Deterministic checks + telemetry</tspan>
