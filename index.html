@@ -7,118 +7,244 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quintessential&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="aurora" aria-hidden="true"></div>
   <header class="site-header">
-    <h1 class="title quintessential-regular">Clarion</h1>
+    <div class="masthead">
+      <p class="eyebrow">Reasoning OS Blueprint</p>
+      <h1 class="title quintessential-regular">Clarion</h1>
+      <p class="subtitle">Futuristic orchestration for agents, automations, and live intelligence.</p>
+    </div>
     <nav class="nav">
       <a href="https://github.com/Lord-Talltree/lord-talltree.github.io" class="nav-link" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
-  <section id="diagram" aria-label="Clarion Blueprint">
-    <svg viewBox="0 0 1200 1400" role="img" aria-labelledby="diagramTitle diagramDesc">
-      <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
-      <desc id="diagramDesc">Top-down flow from Inputs to Normalizer, Meta Agent, Task Map, Orchestrator, Agents, and Health & Tests with heartbeat flow.</desc>
-      <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M0,0 L10,5 L0,10 z" fill="#fff"/>
-        </marker>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.35"/>
-        </filter>
-        <style>
-          .box{fill:rgba(255,255,255,.04);stroke:#fff;stroke-width:2}
-          .capsule{rx:24;ry:24}
-          .label{fill:#fff;font:600 18px/1.2 Inter,system-ui,sans-serif;letter-spacing:.02em}
-          .label.center{text-anchor:middle}
-          .muted{fill:rgba(255,255,255,.7);font:500 14px/1.2 Inter,system-ui,sans-serif;text-anchor:middle}
-          .funnel{fill:none;stroke:#fff;stroke-width:3}
-          .flow{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:8 14;animation:flow 9s linear infinite}
-          .flow.slow{animation-duration:12s}
-          @keyframes flow{to{stroke-dashoffset:-1400}}
-          .pulse{fill:#fff}
-          .pulseGlow{filter:url(#glow)}
-          @media (prefers-reduced-motion: reduce){.flow{animation:none}.pulse{display:none}}
-        </style>
-      </defs>
-      <g transform="translate(150,80)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="900" height="120" rx="24" ry="24"/>
-        <text class="label center" x="450" y="55">Inputs — Logos · APIs · Docs · Code</text>
-        <text class="muted" x="450" y="90">Signals Converge For Clarification</text>
-      </g>
-      <path class="flow slow" marker-end="url(#arrow)" d="M600,200 C600,240 600,260 600,300"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="10s" repeatCount="indefinite" path="M600,200 C600,240 600,260 600,300"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-      <g transform="translate(350,300)">
-        <path class="funnel" d="M0,0 Q250,0 500,0 L420,120 Q250,170 80,120 Z" filter="url(#glow)"/>
-        <text class="label center" x="250" y="90">Normalizer</text>
-        <text class="muted" x="250" y="115">Ingest · Inspect · First-Principles · Assumptions</text>
-      </g>
-      <path class="flow" marker-end="url(#arrow)" d="M600,460 C600,500 600,520 600,560"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="9s" repeatCount="indefinite" path="M600,460 C600,500 600,520 600,560"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-      <g transform="translate(400,560)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="400" height="110" rx="24" ry="24"/>
-        <text class="label center" x="200" y="55">Meta Agent</text>
-        <text class="muted" x="200" y="82">Global Context · Plan Review · Audits · Emergent Assumptions</text>
-      </g>
-      <g transform="translate(70,560)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="260" height="110" rx="24" ry="24"/>
-        <text class="label center" x="130" y="55">Logs &amp; Assumptions</text>
-      </g>
-      <g transform="translate(870,560)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="260" height="110" rx="24" ry="24"/>
-        <text class="label center" x="130" y="55">Task Map</text>
-      </g>
-      <path class="flow slow" marker-end="url(#arrow)" d="M400,615 C320,615 260,615 200,615"/>
-      <path class="flow slow" marker-end="url(#arrow)" d="M800,615 C880,615 940,615 1000,615"/>
-      <path class="flow" marker-end="url(#arrow)" d="M600,670 C600,730 600,760 600,820"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="9s" repeatCount="indefinite" path="M600,670 C600,730 600,760 600,820"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-      <g transform="translate(300,820)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="600" height="110" rx="24" ry="24"/>
-        <text class="label center" x="300" y="55">Orchestrator</text>
-        <text class="muted" x="300" y="82">Plan → Tasks · Scheduling · Policy Guardrails · Agent Routing</text>
-      </g>
-      <path class="flow slow" marker-end="url(#arrow)" d="M600,930 C600,980 600,1000 600,1050"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="12s" repeatCount="indefinite" path="M600,930 C600,980 600,1000 600,1050"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-      <g transform="translate(430,1050)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="340" height="90" rx="24" ry="24"/>
-        <text class="label center" x="170" y="50">Agents · Code · Data · UI · Docs · Integration · Healing</text>
-      </g>
-      <path class="flow slow" marker-end="url(#arrow)" d="M600,1140 C600,1180 600,1200 600,1240"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="12s" repeatCount="indefinite" path="M600,1140 C600,1180 600,1200 600,1240"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-      <g transform="translate(410,1240)">
-        <rect class="box capsule" filter="url(#glow)" x="0" y="0" width="380" height="100" rx="24" ry="24"/>
-        <text class="label center" x="190" y="55">Health &amp; Tests</text>
-      </g>
-      <path class="flow" marker-end="url(#arrow)" d="M600,1340 C900,1300 900,990 600,930"/>
-      <circle class="pulse pulseGlow" r="5">
-        <animateMotion dur="14s" repeatCount="indefinite" path="M600,1340 C900,1300 900,990 600,930"/>
-        <animate attributeName="r" values="4;6;4" dur="1.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
-      </circle>
-    </svg>
-  </section>
+  <main class="content">
+    <section class="diagram-panel">
+      <div class="diagram-copy">
+        <p>Signals are normalized and reasoned through Clarion&rsquo;s flow, moving from ingestion to metacognition, orchestration, agents, and continuous health checks.</p>
+        <p class="muted-copy">Hover the pulse dots to reveal the detailed contract for each module.</p>
+      </div>
+      <section id="diagram" aria-label="Clarion Blueprint">
+        <svg viewBox="0 0 1200 1400" role="img" aria-labelledby="diagramTitle diagramDesc">
+          <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
+          <desc id="diagramDesc">Vertical flow of Clarion modules with hover panels describing each layer.</desc>
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="url(#arrowGradient)"/>
+            </marker>
+            <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7cf2ff"/>
+              <stop offset="100%" stop-color="#fff"/>
+            </linearGradient>
+            <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(40,191,255,0.24)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.08)"/>
+            </linearGradient>
+            <linearGradient id="nodeAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7cf2ff"/>
+              <stop offset="100%" stop-color="#b58bff"/>
+            </linearGradient>
+            <linearGradient id="panelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(13,25,48,0.85)"/>
+              <stop offset="100%" stop-color="rgba(13,25,48,0.35)"/>
+            </linearGradient>
+            <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0ff" flood-opacity="0.15"/>
+            </filter>
+            <filter id="panelGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00c2ff" flood-opacity="0.3"/>
+            </filter>
+            <style>
+              text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
+              .node{fill:url(#nodeGradient);stroke:url(#nodeAccent);stroke-width:1.5;rx:28;ry:28;filter:url(#nodeGlow)}
+              .module-name{fill:#f6fbff;font-size:26px;font-weight:600;text-anchor:middle;dominant-baseline:central}
+              .flow{fill:none;stroke:url(#nodeAccent);stroke-width:3;stroke-dasharray:10 18;animation:flow 11s linear infinite}
+              .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.7}
+              .pulse{fill:#fff}
+              .pulseGlow{filter:url(#panelGlow)}
+              .info-dot circle{fill:none;stroke:url(#nodeAccent);stroke-width:1.5}
+              .info-dot .core{fill:#fff;stroke:none}
+              .info-panel{opacity:0;transition:opacity .25s ease-out}
+              .module:hover .info-panel,
+              .info-dot:focus + .info-panel,
+              .info-dot:focus-visible + .info-panel{opacity:1}
+              .panel-bg{fill:url(#panelGradient);stroke:rgba(124,242,255,.5);stroke-width:1.2;rx:18;ry:18;filter:url(#panelGlow)}
+              .panel-text{fill:#f8fbff;font-size:16px;font-weight:400}
+              @keyframes flow{to{stroke-dashoffset:-1800}}
+              @media (prefers-reduced-motion: reduce){
+                .flow{animation:none}
+              }
+            </style>
+          </defs>
+          <g transform="translate(280,40)" class="module">
+            <rect class="node" width="640" height="140"/>
+            <text class="module-name" x="320" y="70">Inputs</text>
+            <g class="info-dot" transform="translate(600,24)" tabindex="0" role="button" aria-label="View Inputs insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(660,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Logos · APIs · Docs · Code</tspan>
+                <tspan x="18" y="66">Streams converge for clarity</tspan>
+                <tspan x="18" y="94">Signal prep + intent tagging</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow" marker-end="url(#arrow)" d="M600,200 C600,250 600,260 600,320"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="12s" repeatCount="indefinite" path="M600,200 C600,250 600,260 600,320"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(330,240)" class="module">
+            <rect class="node" width="540" height="130"/>
+            <text class="module-name" x="270" y="65">Normalizer</text>
+            <g class="info-dot" transform="translate(500,22)" tabindex="0" role="button" aria-label="View Normalizer insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(560,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Ingest · inspect · first principles</tspan>
+                <tspan x="18" y="66">Assumption surfacing + redlines</tspan>
+                <tspan x="18" y="94">Context scored for fidelity</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow" marker-end="url(#arrow)" d="M600,370 C600,420 600,440 600,480"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M600,370 C600,420 600,440 600,480"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(430,430)" class="module">
+            <rect class="node" width="340" height="120"/>
+            <text class="module-name" x="170" y="60">Meta Agent</text>
+            <g class="info-dot" transform="translate(300,22)" tabindex="0" role="button" aria-label="View Meta Agent insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(360,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Global context radar</tspan>
+                <tspan x="18" y="66">Plan audits + assumption drift</tspan>
+                <tspan x="18" y="94">Emergent directives</tspan>
+              </text>
+            </g>
+          </g>
+          <g transform="translate(70,430)" class="module left">
+            <rect class="node" width="240" height="120"/>
+            <text class="module-name" x="120" y="60">Logs &amp; Assumptions</text>
+            <g class="info-dot" transform="translate(200,22)" tabindex="0" role="button" aria-label="View Logs and Assumptions insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(-300,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Traceable facts + journaling</tspan>
+                <tspan x="18" y="66">Decisions + commitments</tspan>
+                <tspan x="18" y="94">Context window reuse</tspan>
+              </text>
+            </g>
+          </g>
+          <g transform="translate(890,430)" class="module">
+            <rect class="node" width="240" height="120"/>
+            <text class="module-name" x="120" y="60">Task Map</text>
+            <g class="info-dot" transform="translate(200,22)" tabindex="0" role="button" aria-label="View Task Map insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(260,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Live dependency graph</tspan>
+                <tspan x="18" y="66">Scopes + horizons + SLAs</tspan>
+                <tspan x="18" y="94">Heatmap of blockers</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M310,490 C230,490 180,540 150,540"/>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M890,490 C970,490 1020,540 1070,540"/>
+          <path class="flow" marker-end="url(#arrow)" d="M600,520 C600,580 600,600 600,660"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,520 C600,580 600,600 600,660"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(320,630)" class="module">
+            <rect class="node" width="560" height="140"/>
+            <text class="module-name" x="280" y="70">Orchestrator</text>
+            <g class="info-dot" transform="translate(520,24)" tabindex="0" role="button" aria-label="View Orchestrator insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(580,-10)">
+              <rect class="panel-bg" width="280" height="150"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Plan → tasks sequencing</tspan>
+                <tspan x="18" y="66">Scheduling + policy guardrails</tspan>
+                <tspan x="18" y="94">Multi-agent routing + recovery</tspan>
+                <tspan x="18" y="122">Energy budget + prioritization</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow" marker-end="url(#arrow)" d="M600,770 C600,820 600,840 600,900"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="12s" repeatCount="indefinite" path="M600,770 C600,820 600,840 600,900"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.7s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(360,860)" class="module">
+            <rect class="node" width="480" height="120"/>
+            <text class="module-name" x="240" y="60">Agents</text>
+            <g class="info-dot" transform="translate(440,22)" tabindex="0" role="button" aria-label="View Agents insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(500,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Code · data · UI · docs · integration</tspan>
+                <tspan x="18" y="66">Healing + escalation patterns</tspan>
+                <tspan x="18" y="94">User-grade deliverables</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow" marker-end="url(#arrow)" d="M600,980 C600,1030 600,1040 600,1100"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,980 C600,1030 600,1040 600,1100"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(380,1040)" class="module">
+            <rect class="node" width="440" height="120"/>
+            <text class="module-name" x="220" y="60">Health &amp; Tests</text>
+            <g class="info-dot" transform="translate(400,22)" tabindex="0" role="button" aria-label="View Health and Tests insight" focusable="true">
+              <circle r="14" opacity="0.6"/>
+              <circle class="core" r="4"/>
+            </g>
+            <g class="info-panel" transform="translate(460,-10)">
+              <rect class="panel-bg" width="280" height="130"/>
+              <text class="panel-text">
+                <tspan x="18" y="38">Deterministic checks + telemetry</tspan>
+                <tspan x="18" y="66">Runbook metrics + trendlines</tspan>
+                <tspan x="18" y="94">Feedback loop to orchestrator</tspan>
+              </text>
+            </g>
+          </g>
+          <path class="flow secondary" marker-end="url(#arrow)" d="M620,1150 C900,1100 900,900 650,840"/>
+          <circle class="pulse pulseGlow" r="6">
+            <animateMotion dur="16s" repeatCount="indefinite" path="M620,1150 C900,1100 900,900 650,840"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </section>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
