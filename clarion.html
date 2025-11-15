@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarion</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quintessential&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <header class="global-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand" aria-label="Talltree home">
+        <span class="logo-slot" aria-hidden="true">
+          <img src="logo_inverted.png" alt="" class="logo-mark">
+        </span>
+        <span class="banner-text">Talltree</span>
+      </a>
+      <div class="nav-links">
+        <a href="clarion.html" class="nav-link active" aria-current="page">Clarion</a>
+        <a href="lide.html" class="nav-link">L-ide</a>
+        <a href="services.html" class="nav-link">Services</a>
+      </div>
+    </nav>
+  </header>
+  <div class="top-banner">
+    <div class="logo-slot" aria-label="TallTree AI logo">
+      <img src="logo_inverted.png" alt="TallTree AI logo" class="logo-mark">
+    </div>
+    <span class="banner-text">TallTree AI</span>
+  </div>
+  <header class="site-header">
+    <div class="masthead">
+      <h1 class="title quintessential-regular">Clarion</h1>
+      <p class="tagline">Reasoning OS</p>
+    </div>
+  </header>
+  <main class="content">
+    <section class="hero-intro">
+      <p>AI orchestration for agents, automations, and live intelligence—signals are normalized, audited, and routed through metacognition, orchestration, delivery agents, and continuous health checks to keep operations adaptive and trustworthy.</p>
+    </section>
+    <section id="diagram" aria-label="Clarion Blueprint">
+        <svg viewBox="0 0 1200 1400" preserveAspectRatio="xMidYMin meet" role="img" aria-labelledby="diagramTitle diagramDesc">
+          <title id="diagramTitle">Clarion — Reasoning OS Blueprint</title>
+          <desc id="diagramDesc">Vertical Clarion flow from Inputs to Health with hoverable modules that swap names for detailed copy.</desc>
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#7cf2ff"/>
+            </marker>
+            <marker id="arrowReverse" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+              <path d="M10,0 L0,5 L10,10 z" fill="#7cf2ff"/>
+            </marker>
+            <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#0ff" flood-opacity="0.2"/>
+            </filter>
+            <filter id="panelGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#00c2ff" flood-opacity="0.25"/>
+            </filter>
+            <style>
+              text{font-family:'Space Grotesk',Inter,system-ui,sans-serif;letter-spacing:.02em}
+              .node{fill:rgba(6,12,26,.08);stroke:#7cf2ff;stroke-width:1.4;rx:28;ry:28;filter:url(#nodeGlow)}
+              .module-name{fill:#f6fbff;font-size:20px;font-weight:600;text-anchor:middle;dominant-baseline:central;letter-spacing:.08em;transition:opacity .25s ease}
+              .module-details{fill:#e6f4ff;font-size:17px;font-weight:600;text-anchor:middle;letter-spacing:.01em;opacity:0;transition:opacity .25s ease}
+              .module-details tspan{font-size:15px;font-weight:400}
+              .module:hover .module-name,
+              .module:focus-within .module-name{opacity:0}
+              .module:hover .module-details,
+              .module:focus-within .module-details{opacity:1}
+              .flow{fill:none;stroke:rgba(124,242,255,.85);stroke-width:3;stroke-dasharray:10 18;stroke-linecap:round;animation:flow 14s linear infinite}
+              .flow.secondary{stroke-width:2;stroke-dasharray:6 14;opacity:.6;animation:flow 16s linear infinite}
+              .pulse{fill:#fff}
+              .pulseGlow{filter:url(#panelGlow)}
+              .info-dot{cursor:pointer}
+              .info-dot circle{fill:none;stroke:rgba(255,255,255,.4);stroke-width:1.6;filter:url(#panelGlow);pointer-events:all}
+              .info-dot .core{fill:#bdfdff;stroke:none}
+              @keyframes flow{to{stroke-dashoffset:-1800}}
+              @media (prefers-reduced-motion: reduce){
+                .flow{animation:none}
+                .pulse{display:none}
+              }
+            </style>
+          </defs>
+          <path class="flow" marker-end="url(#arrow)" d="M600,180 L600,250"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M600,180 L600,250"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,380 L600,500"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M600,380 L600,500"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M310,565 L430,565"/>
+          <circle class="pulse pulseGlow" r="4">
+            <animateMotion dur="9s" repeatCount="indefinite" path="M310,565 L430,565"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M770,565 L890,565"/>
+          <circle class="pulse pulseGlow" r="4">
+            <animateMotion dur="9s" repeatCount="indefinite" path="M770,565 L890,565"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.4s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,630 L600,770"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,630 L600,770"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,910 L600,1010"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,910 L600,1010"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow" marker-end="url(#arrow)" d="M600,1130 L600,1230"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="11s" repeatCount="indefinite" path="M600,1130 L600,1230"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <path class="flow secondary" marker-start="url(#arrowReverse)" marker-end="url(#arrow)" d="M380,1290 C180,1170 160,950 320,840"/>
+          <circle class="pulse pulseGlow" r="5">
+            <animateMotion dur="16s" repeatCount="indefinite" path="M380,1290 C180,1170 160,950 320,840"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <g transform="translate(280,40)" class="module">
+            <rect class="node" width="640" height="140"/>
+            <text class="module-name" x="320" y="70">INPUTS</text>
+            <text class="module-details">
+              <tspan x="320" y="48">Logos · APIs · Docs · Code</tspan>
+              <tspan x="320" y="72">Signals converge for clarity</tspan>
+              <tspan x="320" y="96">Signal prep + intent tagging</tspan>
+            </text>
+            <g class="info-dot" transform="translate(660,24)" tabindex="0" role="button" aria-label="Inputs insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(330,250)" class="module">
+            <rect class="node" width="540" height="130"/>
+            <text class="module-name" x="270" y="65">NORMALIZER</text>
+            <text class="module-details">
+              <tspan x="270" y="44">Ingest · inspect · first principles</tspan>
+              <tspan x="270" y="66">Surface assumptions + redlines</tspan>
+              <tspan x="270" y="88">Context scored for fidelity</tspan>
+            </text>
+            <g class="info-dot" transform="translate(560,22)" tabindex="0" role="button" aria-label="Normalizer insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(430,500)" class="module">
+            <rect class="node" width="340" height="130"/>
+            <text class="module-name" x="170" y="65">META AGENT</text>
+            <text class="module-details">
+              <tspan x="170" y="44">Global context radar</tspan>
+              <tspan x="170" y="66">Plan audits + drift watch</tspan>
+              <tspan x="170" y="88">Emergent directives</tspan>
+            </text>
+            <g class="info-dot" transform="translate(360,22)" tabindex="0" role="button" aria-label="Meta Agent insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(70,500)" class="module left">
+            <rect class="node" width="240" height="130"/>
+            <text class="module-name" x="120" y="55">
+              <tspan x="120" dy="0">LOGS &amp;</tspan>
+              <tspan x="120" dy="20">ASSUMPTIONS</tspan>
+            </text>
+            <text class="module-details">
+              <tspan x="120" y="44">Traceable facts + journaling</tspan>
+              <tspan x="120" y="66">Decisions + commitments</tspan>
+              <tspan x="120" y="88">Context reuse playlists</tspan>
+            </text>
+            <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Logs insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(890,500)" class="module">
+            <rect class="node" width="240" height="130"/>
+            <text class="module-name" x="120" y="65">TASK MAP</text>
+            <text class="module-details">
+              <tspan x="120" y="44">Live dependency graph</tspan>
+              <tspan x="120" y="66">Scopes · horizons · SLAs</tspan>
+              <tspan x="120" y="88">Blocker heatmap</tspan>
+            </text>
+            <g class="info-dot" transform="translate(260,22)" tabindex="0" role="button" aria-label="Task map insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(320,770)" class="module">
+            <rect class="node" width="560" height="140"/>
+            <text class="module-name" x="280" y="70">ORCHESTRATOR</text>
+            <text class="module-details">
+              <tspan x="280" y="46">Plan → task sequencing</tspan>
+              <tspan x="280" y="68">Scheduling + guardrails</tspan>
+              <tspan x="280" y="90">Routing · recovery · prioritization</tspan>
+              <tspan x="280" y="112">Energy + focus budgets</tspan>
+            </text>
+            <g class="info-dot" transform="translate(580,24)" tabindex="0" role="button" aria-label="Orchestrator insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(360,1010)" class="module">
+            <rect class="node" width="480" height="120"/>
+            <text class="module-name" x="240" y="60">AGENTS</text>
+            <text class="module-details">
+              <tspan x="240" y="42">Code · data · UI · docs · integration</tspan>
+              <tspan x="240" y="64">Auto-healing + escalation</tspan>
+              <tspan x="240" y="86">User-grade deliverables</tspan>
+            </text>
+            <g class="info-dot" transform="translate(500,20)" tabindex="0" role="button" aria-label="Agents insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+          <g transform="translate(380,1230)" class="module">
+            <rect class="node" width="440" height="120"/>
+            <text class="module-name" x="220" y="60">HEALTH &amp; TESTS</text>
+            <text class="module-details">
+              <tspan x="220" y="42">Deterministic checks + telemetry</tspan>
+              <tspan x="220" y="64">Runbook metrics + trendlines</tspan>
+              <tspan x="220" y="86">Feedback loop to orchestrator</tspan>
+            </text>
+            <g class="info-dot" transform="translate(460,20)" tabindex="0" role="button" aria-label="Health insight" focusable="true">
+              <circle r="7"/>
+              <circle class="core" r="3"/>
+            </g>
+          </g>
+        </svg>
+      </section>
+  </main>
+  <footer class="site-footer">Talltree · Clarion reasoning OS</footer>
+  <script src="script.js"></script>
+</body>
+</html>
