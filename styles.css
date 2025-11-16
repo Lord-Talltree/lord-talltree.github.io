@@ -264,12 +264,14 @@ body{
   letter-spacing:.08em;
   font-size:1.4rem;
 }
-.section-card h2,
-.service-card h3{
+.section-card h2{
   text-transform:uppercase;
   font-size:1.1rem;
   letter-spacing:.3em;
   color:var(--muted);
+}
+.service-card h3{
+  color:var(--ink);
 }
 .section-card h3{
   margin:.2rem 0;
@@ -290,7 +292,7 @@ body{
 }
 .page-content>.section-card:first-of-type p{
   font-size:clamp(1rem,1.2vw,1.15rem);
-  color:var(--muted);
+  color:var(--ink);
   margin-bottom:0;
 }
 .section-card ul{
