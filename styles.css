@@ -314,6 +314,9 @@ body{
   color:var(--muted);
   line-height:1.7;
 }
+.service-card ul li{
+  margin-bottom:.35rem;
+}
 .site-footer{
   margin-top:clamp(32px,5vw,60px);
   text-align:center;
