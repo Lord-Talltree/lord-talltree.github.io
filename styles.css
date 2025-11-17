@@ -165,7 +165,8 @@ body{
 #diagram{
   position:relative;
   isolation:isolate;
-  width:clamp(320px,62vw,780px);
+  width:100%;
+  max-width:780px;
   padding:clamp(24px,3vw,40px);
   margin:0 auto;
   overflow:visible;
