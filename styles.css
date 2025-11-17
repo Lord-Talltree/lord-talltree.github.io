@@ -298,7 +298,7 @@ body{
 }
 .page-content>.section-card:first-of-type{
   max-width:780px;
-  margin:0 auto clamp(24px,4vw,44px);
+  margin:0 auto;
   padding:clamp(20px,3vw,40px);
 }
 .page-content>.section-card:first-of-type p{
