@@ -308,6 +308,11 @@ body{
   gap:clamp(18px,3vw,28px);
 }
 .service-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.dual-grid{
+  display:grid;
+  gap:clamp(18px,3vw,32px);
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
 .service-card ul{
   margin:1.2rem 0 0;
   padding-left:1.2rem;
