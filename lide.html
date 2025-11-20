@@ -69,7 +69,9 @@
         text for dependencies, assumptions, and ambiguities, it creates a rigorous "Meaning Graph" that machines can
         validate and humans can trust.</p>
 
-      <h3>Two Ways to Use L-ide</h3>
+      <div class="page-break" aria-hidden="true"></div>
+
+      <h2>Two Ways to Use L-ide</h2>
       <p><strong>API Integration:</strong> Drop L-ide into your existing systems. Send text via REST API, receive
         structured graph data (JSON) for validation, conflict detection, or dependency tracking. Perfect for agent
         pipelines, CI/CD gates, or automated review systems.</p>
@@ -77,28 +79,6 @@
       <p><strong>Web Interface:</strong> Use our visual interface to paste text, analyze it instantly, and explore the
         generated graph with diagnostics highlighted. Great for rapid prototyping, education, or manual review
         workflows.</p>
-
-      <div class="api-example">
-        <h4>API Quick Start</h4>
-        <pre><code># 1. Create a document
-curl -X POST http://localhost:8000/v0/docs \
-  -H "Content-Type: application/json" \
-  -d '{"text": "The server must be live before deployment.", "lang": "en"}'
-  
-# 2. Analyze it
-curl -X POST http://localhost:8000/v0/analyze \
-  -H "Content-Type: application/json" \
-  -d '{"docId": "&lt;DOC_ID&gt;", "options": {"processing_mode": "Map", "stages": ["parse", "graph"]}}'
-  
-# 3. Fetch the graph
-curl http://localhost:8000/v0/docs/&lt;DOC_ID&gt;/graph</code></pre>
-      </div>
-
-      <div class="interface-preview">
-        <img src="images/graph_example.png" alt="L-ide web interface showing graph visualization"
-          class="interface-screenshot">
-        <p class="caption">The web interface provides instant visual feedback on dependencies and assumptions.</p>
-      </div>
     </section>
 
     <div class="section-stack">
@@ -112,14 +92,16 @@ curl http://localhost:8000/v0/docs/&lt;DOC_ID&gt;/graph</code></pre>
         </blockquote>
         <p>The agent might hallucinate and generate a plan like:
           <code>migrate() → backup() → restore_if_failed()</code>. The backup happens AFTER migration—catastrophic if
-          the migration corrupts data.</p>
+          the migration corrupts data.
+        </p>
 
         <h4>How L-ide Solves It</h4>
         <p>L-ide parses the instruction into a dependency graph showing that <code>backup</code> must happen BEFORE
-          <code>migrate</code>. Your validation layer can reject the agent's plan automatically.</p>
+          <code>migrate</code>. Your validation layer can reject the agent's plan automatically.
+        </p>
 
         <div class="api-example">
-          <h4>Implementation</h4>
+
           <pre><code>// Step 1: Parse the user instruction
 const instruction = "Backup the prod database, then migrate the schema."
 const doc = await api.createDoc({text: instruction, lang: "en"})
@@ -160,7 +142,7 @@ validatePlan(["backup", "migrate"], dependencies) // ✅ Passes</code></pre>
           data" (which typically requires persistent connections that can slow initial load).</p>
 
         <div class="api-example">
-          <h4>Implementation</h4>
+
           <pre><code>// Step 1: Analyze the spec
 const spec = "The dashboard must load quickly and display real-time data."
 const doc = await api.createDoc({text: spec, lang: "en"})
@@ -204,10 +186,11 @@ function generateClarificationQuestions(diagnostics, conflicts) {
         <h4>How L-ide Solves It</h4>
         <p>L-ide extracts the conditional logic as a graph:
           <code>IF (missed_deadline AND NOT force_majeure) THEN termination_allowed</code>. You can query the graph to
-          find all termination triggers or deadline extensions.</p>
+          find all termination triggers or deadline extensions.
+        </p>
 
         <div class="api-example">
-          <h4>Implementation</h4>
+
           <pre><code>// Step 1: Parse the contract clause
 const clause = "If Vendor misses Milestone 1 by more than 30 days, Client may terminate."
 const doc = await api.createDoc({text: clause, lang: "en"})
@@ -257,7 +240,7 @@ terminationRights.forEach(right => {
         </p>
 
         <div class="api-example">
-          <h4>Implementation</h4>
+
           <pre><code>// Step 1: Process meeting transcript
 const transcript = "Sarah will update the API docs. Frontend needs the schema first."
 const doc = await api.createDoc({text: transcript, lang: "en"})
@@ -313,7 +296,7 @@ assumptions.forEach(a => {
           (recipient) → <code>review</code> (prior event). Students see the timeline and relationships at a glance.</p>
 
         <div class="api-example">
-          <h4>Implementation</h4>
+
           <pre><code>// Step 1: Parse the complex sentence
 const sentence = "The committee was advised that the proposal had been reviewed."
 const doc = await api.createDoc({text: sentence, lang: "en"})
