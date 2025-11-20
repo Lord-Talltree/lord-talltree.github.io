@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +8,12 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quintessential&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quintessential&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="aurora" aria-hidden="true"></div>
   <header class="global-header">
@@ -35,63 +39,97 @@
   </header>
   <main class="page-content">
     <section class="section-card">
-      <p>Human language requires unspoken assumptions. Have you ever texted someone and they mistook the intent in what you wrote? Assumptions are useful because we don&rsquo;t have the time or capacity to explain everything in perfect detail, but when building tools or working on complex problems, unspoken assumptions show up as delays, budget overruns, or missed expectations. L-ide is a logic-driven module that takes your natural language &mdash; plans, prompts, briefs, etc. &mdash; and turns it into a clear map of assumptions, dependencies, and open questions. An L-ide map gives project managers, C-suite leaders, and AI engineers true clarity.</p>
+      <p>Human language requires unspoken assumptions. Have you ever texted someone and they mistook the intent in what
+        you wrote? Assumptions are useful because we don&rsquo;t have the time or capacity to explain everything in
+        perfect detail, but when building tools or working on complex problems, unspoken assumptions show up as delays,
+        budget overruns, or missed expectations. L-ide is a logic-driven module that takes your natural language &mdash;
+        plans, prompts, briefs, etc. &mdash; and turns it into a clear map of assumptions, dependencies, and open
+        questions. An L-ide map gives project managers, C-suite leaders, and AI engineers true clarity.</p>
     </section>
     <div class="page-break" aria-hidden="true"></div>
     <div class="dual-grid" aria-label="L-ide use cases">
       <article class="section-card">
         <h3>Assumption API <span class="subhead">for technical teams</span></h3>
-        <p>Drop L-ide into your agent stack to translate prompts, specs, or git issues into structured assumption graphs. Your services can query the graph to detect conflicts, surface missing data, or gate risky deploys before execution. It becomes a shared truth layer that keeps autonomous systems honest.</p>
+        <p>Drop L-ide into your agent stack to translate prompts, specs, or git issues into structured assumption
+          graphs. Your services can query the graph to detect conflicts, surface missing data, or gate risky deploys
+          before execution. It becomes a shared truth layer that keeps autonomous systems honest.</p>
       </article>
       <article class="section-card">
         <h3>Alignment briefings <span class="subhead">for project leads</span></h3>
-        <p>Run L-ide on kickoff docs, meeting notes, or quarterly plans and instantly see the hidden dependencies, bets, and open questions. Project managers can annotate, resolve, or assign each assumption, giving stakeholders a living brief that evolves as decisions land.</p>
+        <p>Run L-ide on kickoff docs, meeting notes, or quarterly plans and instantly see the hidden dependencies, bets,
+          and open questions. Project managers can annotate, resolve, or assign each assumption, giving stakeholders a
+          living brief that evolves as decisions land.</p>
       </article>
     </div>
-    <div class="section-stack">
-      <article class="section-card">
-        <h3>The Real Risk Isn&rsquo;t The Plan &ndash; It&rsquo;s The Assumptions Underneath It</h3>
-        <p>Most plans look clean on paper, but they quietly depend on dozens of unspoken assumptions: about data quality, team capacity, stakeholder priorities, or even how an AI model will behave. Those assumptions stay invisible until something breaks &ndash; a deadline slips, a budget explodes, or a pilot fails. L-ide brings those assumptions to the surface before they hurt you.</p>
-      </article>
-      <article class="section-card">
-        <h3>Turn Natural Language Into A Logic Map</h3>
-        <p>L-ide takes the way you already talk and write &ndash; project briefs, strategy docs, prompts, Slack threads &ndash; and translates it into a structured logic map.</p>
-        <p>That map highlights:</p>
-        <ul>
-          <li>The assumptions you&rsquo;re currently making</li>
-          <li>The constraints you&rsquo;ve declared (or implied)</li>
-          <li>The dependencies between different parts of the plan</li>
-          <li>The gaps, conflicts, and open questions that need a decision</li>
-        </ul>
-      </article>
-      <article class="section-card">
-        <h3>Built For People Who Need Clarity, Not Just Noise</h3>
-        <p>L-ide is built for people who are accountable for outcomes, not just activity.</p>
-        <ul>
-          <li>Project managers can keep work aligned with real constraints instead of wishful thinking.</li>
-          <li>C-suite and leadership can see the logic behind a plan before they commit budget and reputation.</li>
-          <li>AI engineers and data teams can turn high-level intent into clear, testable assumptions their systems can actually work with.</li>
-        </ul>
-      </article>
-      <article class="section-card">
-        <h3>Fewer Surprises, Faster Decisions, Better Projects</h3>
-        <p>With L-ide, you spend less time untangling misunderstandings and more time solving the real problem. Assumptions become visible, decisions become traceable, and teams &ndash; human or AI &ndash; can align on what &ldquo;success&rdquo; actually means before they start building.</p>
-      </article>
-      <article class="section-card">
-        <h3>See It In Action</h3>
-        <p>Explore our <a href="docs/walkthrough.md">technical documentation and walkthrough</a> to see how L-ide processes text into meaning graphs.</p>
-        
-        <h4>Example: Ambiguity Detection</h4>
-        <p>L-ide automatically flags vague terms that could lead to misalignment.</p>
-        <img src="images/diagnostics.png" alt="Screenshot showing L-ide flagging 'uneasy' as a vague term" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
+    <div class="page-break" aria-hidden="true"></div>
 
-        <h4>Example: Graph Generation</h4>
-        <p>Visualizing the sentence "The bank is closed" as a structured graph.</p>
-        <img src="images/graph_example.png" alt="Screenshot of the meaning graph for 'The bank is closed'" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
+    <section class="section-card">
+      <h2>What We've Built</h2>
+      <p>L-ide is a language intelligence engine that transforms natural language into structured logic maps. By parsing
+        text for dependencies, assumptions, and ambiguities, it creates a rigorous "Meaning Graph" that machines can
+        validate and humans can trust.</p>
+    </section>
+
+    <div class="section-stack">
+      <!-- Use Case 1 -->
+      <article class="section-card use-case-item">
+        <div class="use-case-content">
+          <h3>1. AI Agent Alignment</h3>
+          <p><strong>Problem:</strong> LLM agents often hallucinate or miss subtle constraints in complex prompts.</p>
+          <p><strong>Solution:</strong> L-ide converts the prompt into a strict dependency graph. The agent's generated
+            plan is then checked against this graph to block violations.</p>
+        </div>
+        <div class="use-case-visual">
+          <img src="images/graph_example.png" alt="Graph dependency example" class="mini-graph">
+        </div>
+      </article>
+
+      <!-- Use Case 2 -->
+      <article class="section-card use-case-item">
+        <div class="use-case-content">
+          <h3>2. Requirement Engineering</h3>
+          <p><strong>Problem:</strong> Specs often contain ambiguous terms or hidden conflicts.</p>
+          <p><strong>Solution:</strong> L-ide flags ambiguity and visualizes missing logic branches, ensuring
+            requirements are precise before coding begins.</p>
+        </div>
+        <div class="use-case-visual">
+          <img src="images/diagnostics.png" alt="Ambiguity detection example" class="mini-graph">
+        </div>
+      </article>
+
+      <!-- Use Case 3 -->
+      <article class="section-card use-case-item">
+        <div class="use-case-content">
+          <h3>3. Legal & Contract Review</h3>
+          <p><strong>Problem:</strong> Contracts are dense with conditional obligations that are hard to track.</p>
+          <p><strong>Solution:</strong> L-ide maps contracts into a logic graph of "If-Then" obligations, visualizing
+            deadlines and dependencies clearly.</p>
+        </div>
+      </article>
+
+      <!-- Use Case 4 -->
+      <article class="section-card use-case-item">
+        <div class="use-case-content">
+          <h3>4. Project Management</h3>
+          <p><strong>Problem:</strong> Meeting notes capture "what" was said but often miss the implications.</p>
+          <p><strong>Solution:</strong> L-ide extracts action items and links them to dependencies, highlighting
+            assumptions that need verification.</p>
+        </div>
+      </article>
+
+      <!-- Use Case 5 -->
+      <article class="section-card use-case-item">
+        <div class="use-case-content">
+          <h3>5. Educational Tools</h3>
+          <p><strong>Problem:</strong> Learners struggle to understand complex sentence structures.</p>
+          <p><strong>Solution:</strong> L-ide provides a visual "x-ray" of language, showing how words relate (Agent,
+            Theme, Modifier) to build intuitive understanding.</p>
+        </div>
       </article>
     </div>
   </main>
   <footer class="site-footer">Talltree · L-ide</footer>
   <script src="script.js"></script>
 </body>
+
 </html>
