@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L-ide</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quintessential&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <header class="global-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="brand" aria-label="Talltree home">
+        <span class="logo-slot" aria-hidden="true">
+          <img src="logo_inverted.png" alt="" class="logo-mark">
+        </span>
+        <span class="banner-text">Talltree</span>
+      </a>
+      <div class="nav-links">
+        <a href="clarion.html" class="nav-link">Clarion</a>
+        <a href="lide.html" class="nav-link active" aria-current="page">L-ide</a>
+        <a href="services.html" class="nav-link">Services</a>
+      </div>
+    </nav>
+  </header>
+  <header class="site-header page-intro">
+    <div class="masthead">
+      <h1 class="title quintessential-regular">L-ide</h1>
+      <p class="tagline">Assumption mapping</p>
+    </div>
+  </header>
+  <main class="page-content">
+    <section class="section-card">
+      <p>Human language requires unspoken assumptions. Have you ever texted someone and they mistook the intent in what
+        you wrote? Assumptions are useful because we don&rsquo;t have the time or capacity to explain everything in
+        perfect detail, but when building tools or working on complex problems, unspoken assumptions show up as delays,
+        budget overruns, or missed expectations. L-ide is a logic-driven module that takes your natural language &mdash;
+        plans, prompts, briefs, etc. &mdash; and turns it into a clear map of assumptions, dependencies, and open
+        questions. An L-ide map gives project managers, C-suite leaders, and AI engineers true clarity.</p>
+    </section>
+    <div class="page-break" aria-hidden="true"></div>
+    <div class="dual-grid" aria-label="L-ide use cases">
+      <article class="section-card">
+        <h3>Assumption API <span class="subhead">for technical teams</span></h3>
+        <p>Drop L-ide into your agent stack to translate prompts, specs, or git issues into structured assumption
+          graphs. Your services can query the graph to detect conflicts, surface missing data, or gate risky deploys
+          before execution. It becomes a shared truth layer that keeps autonomous systems honest.</p>
+      </article>
+      <article class="section-card">
+        <h3>Alignment briefings <span class="subhead">for project leads</span></h3>
+        <p>Run L-ide on kickoff docs, meeting notes, or quarterly plans and instantly see the hidden dependencies, bets,
+          and open questions. Project managers can annotate, resolve, or assign each assumption, giving stakeholders a
+          living brief that evolves as decisions land.</p>
+      </article>
+    </div>
+    <div class="page-break" aria-hidden="true"></div>
+
+    <section class="section-card">
+      <h2>What We've Built</h2>
+      <p>L-ide is a language intelligence engine that transforms natural language into structured logic maps. By parsing
+        text for dependencies, assumptions, and ambiguities, it creates a rigorous "Meaning Graph" that machines can
+        validate and humans can trust.</p>
+
+      <div class="page-break" aria-hidden="true"></div>
+
+      <h2>Two Ways to Use L-ide</h2>
+      <p><strong>API Integration:</strong> Drop L-ide into your existing systems. Send text via REST API, receive
+        structured graph data (JSON) for validation, conflict detection, or dependency tracking. Perfect for agent
+        pipelines, CI/CD gates, or automated review systems.</p>
+
+      <p><strong>Web Interface:</strong> Use our visual interface to paste text, analyze it instantly, and explore the
+        generated graph with diagnostics highlighted. Great for rapid prototyping, education, or manual review
+        workflows.</p>
+    </section>
+
+    <div class="section-stack">
+      <!-- Use Case 1: AI Agent Alignment -->
+      <article class="section-card use-case-walkthrough">
+        <h3>1. AI Agent Alignment</h3>
+
+        <h4>The Problem</h4>
+        <p>You're building an AI agent that automates database migrations. A user provides this instruction:</p>
+        <blockquote>"Backup the prod database, then migrate the schema. If the migration fails, restore from backup."
+        </blockquote>
+        <p>The agent might hallucinate and generate a plan like:
+          <code>migrate() → backup() → restore_if_failed()</code>. The backup happens AFTER migration—catastrophic if
+          the migration corrupts data.
+        </p>
+
+        <h4>How L-ide Solves It</h4>
+        <p>L-ide parses the instruction into a dependency graph showing that <code>backup</code> must happen BEFORE
+          <code>migrate</code>. Your validation layer can reject the agent's plan automatically.
+        </p>
+
+        <div class="api-example">
+
+          <pre><code>// Step 1: Parse the user instruction
+const instruction = "Backup the prod database, then migrate the schema."
+const doc = await api.createDoc({text: instruction, lang: "en"})
+await api.analyze(doc.id, {processing_mode: "Map"})
+const graph = await api.getGraph(doc.id)
+
+// Step 2: Extract dependency constraints
+const dependencies = graph.edges.filter(e => 
+  e.role === "Theme" && e.source.includes("backup")
+)
+// Result: [{ source: "evt_migrate", target: "evt_backup", role: "Prerequisite" }]
+
+// Step 3: Validate agent's plan against constraints
+function validatePlan(agentPlan, constraints) {
+  for (const constraint of constraints) {
+    if (agentPlan.indexOf(constraint.target) > agentPlan.indexOf(constraint.source)) {
+      throw new Error(`Dependency violation: ${constraint.target} must come before ${constraint.source}`)
+    }
+  }
+}
+
+validatePlan(["migrate", "backup"], dependencies) // ❌ Throws error
+validatePlan(["backup", "migrate"], dependencies) // ✅ Passes</code></pre>
+        </div>
+      </article>
+
+      <!-- Use Case 2: Requirements Engineering -->
+      <article class="section-card use-case-walkthrough">
+        <h3>2. Requirements Engineering</h3>
+
+        <h4>The Problem</h4>
+        <p>A product spec states: <em>"The dashboard must load quickly and display real-time data."</em></p>
+        <p>What's "quickly"? Under 100ms? 1 second? 5 seconds? What if real-time updates slow down the load? These
+          ambiguities lead to scope creep and misaligned expectations.</p>
+
+        <h4>How L-ide Solves It</h4>
+        <p>L-ide flags "quickly" as vague and identifies the potential conflict between "load quickly" and "real-time
+          data" (which typically requires persistent connections that can slow initial load).</p>
+
+        <div class="api-example">
+
+          <pre><code>// Step 1: Analyze the spec
+const spec = "The dashboard must load quickly and display real-time data."
+const doc = await api.createDoc({text: spec, lang: "en"})
+await api.analyze(doc.id, {processing_mode: "Map"})
+const graph = await api.getGraph(doc.id)
+
+// Step 2: Check for vague terms
+const diagnostics = graph.diagnostics.filter(d => d.kind === "Vagueness")
+// Result: [{message: "Term 'quickly' is vague", span: {start: 22, end: 29}}]
+
+// Step 3: Identify conflicting requirements
+const requirements = graph.nodes.filter(n => n.type === "Claim")
+const conflicts = detectConflicts(requirements)
+// Result: ["load_quickly vs real_time_data: performance trade-off detected"]
+
+// Step 4: Surface to stakeholders
+function generateClarificationQuestions(diagnostics, conflicts) {
+  return diagnostics.map(d => 
+    `Please clarify: What is the target threshold for "${d.span.text}"?`
+  ).concat(conflicts.map(c =>
+    `Potential conflict detected: ${c}. Which takes priority?`
+  ))
+}
+
+// Output:
+// 1. Please clarify: What is the target threshold for "quickly"?
+// 2. Potential conflict detected: load_quickly vs real_time_data</code></pre>
+        </div>
+      </article>
+
+      <!-- Use Case 3: Legal & Contract Review -->
+      <article class="section-card use-case-walkthrough">
+        <h3>3. Legal & Contract Review</h3>
+
+        <h4>The Problem</h4>
+        <p>A contract clause reads: <em>"If Vendor misses Milestone 1 by more than 30 days, Client may terminate.
+            However, if delay is due to force majeure, the deadline extends by the duration of the event."</em></p>
+        <p>Manually tracking these conditional obligations across a 50-page contract is error-prone. Which clauses
+          trigger termination rights? Which provide extensions?</p>
+
+        <h4>How L-ide Solves It</h4>
+        <p>L-ide extracts the conditional logic as a graph:
+          <code>IF (missed_deadline AND NOT force_majeure) THEN termination_allowed</code>. You can query the graph to
+          find all termination triggers or deadline extensions.
+        </p>
+
+        <div class="api-example">
+
+          <pre><code>// Step 1: Parse the contract clause
+const clause = "If Vendor misses Milestone 1 by more than 30 days, Client may terminate."
+const doc = await api.createDoc({text: clause, lang: "en"})
+await api.analyze(doc.id, {processing_mode: "Map"})
+const graph = await api.getGraph(doc.id)
+
+// Step 2: Build obligation map
+function extractObligations(graph) {
+  const conditionals = graph.edges.filter(e => 
+    e.role === "Support" && ["if", "unless"].includes(e.target.label.toLowerCase())
+  )
+  
+  return conditionals.map(c => ({
+    condition: c.target.label,
+    consequence: c.source.label,
+    trigger: findTriggerTimestamp(c)
+  }))
+}
+
+// Step 3: Query specific obligations
+const obligations = extractObligations(graph)
+const terminationRights = obligations.filter(o => 
+  o.consequence.includes("terminate")
+)
+// Result: [{condition: "missed_deadline > 30 days", consequence: "may_terminate"}]
+
+// Step 4: Set automated alerts
+terminationRights.forEach(right => {
+  scheduleAlert(right.trigger, `Termination right available: ${right.condition}`)
+})</code></pre>
+        </div>
+      </article>
+
+      <!-- Use Case 4: Project Management -->
+      <article class="section-card use-case-walkthrough">
+        <h3>4. Project Management & Meeting Intelligence</h3>
+
+        <h4>The Problem</h4>
+        <p>After a planning meeting, you have notes like: <em>"Sarah will update the API docs. The frontend team needs
+            the API schema before they can start. We're assuming the schema won't change after Friday."</em></p>
+        <p>Traditional note-taking captures the words but misses the critical dependency chain and the risky assumption.
+        </p>
+
+        <h4>How L-ide Solves It</h4>
+        <p>L-ide extracts action items (Sarah → update docs), dependencies (Frontend → needs schema first), and
+          assumptions (schema freeze on Friday). You can visualize the critical path and flag unverified assumptions.
+        </p>
+
+        <div class="api-example">
+
+          <pre><code>// Step 1: Process meeting transcript
+const transcript = "Sarah will update the API docs. Frontend needs the schema first."
+const doc = await api.createDoc({text: transcript, lang: "en"})
+await api.analyze(doc.id, {processing_mode: "Map"})
+const graph = await api.getGraph(doc.id)
+
+// Step 2: Extract action items
+const actions = graph.nodes.filter(n => 
+  n.type === "Event" && hasAgent(n)
+).map(n => ({
+  owner: findAgent(n).label,
+  task: n.label,
+  blockedBy: findDependencies(n)
+}))
+// Result: [{owner: "Sarah", task: "update_docs", blockedBy: []}]
+
+// Step 3: Identify blocking dependencies
+const blockers = graph.edges.filter(e => 
+  e.role === "Prerequisite" || e.label.includes("before")
+)
+// Result: [{source: "frontend_start", target: "schema_available", role: "Prerequisite"}]
+
+// Step 4: Generate critical path
+function buildCriticalPath(actions, blockers) {
+  // Topological sort to find longest dependency chain
+  return sortByDependencies(actions, blockers)
+}
+
+const criticalPath = buildCriticalPath(actions, blockers)
+// Output: ["schema_freeze", "sarah_updates_docs", "frontend_starts"]
+
+// Step 5: Track assumptions
+const assumptions = graph.diagnostics.filter(d => 
+  d.message.includes("assume")
+)
+assumptions.forEach(a => {
+  flagForVerification(a.span.text, a.confidence)
+})</code></pre>
+        </div>
+      </article>
+
+      <!-- Use Case 5: Educational Tools -->
+      <article class="section-card use-case-walkthrough">
+        <h3>5. Educational Tools (Language Learning)</h3>
+
+        <h4>The Problem</h4>
+        <p>A student encounters: <em>"The committee was advised that the proposal had been reviewed."</em></p>
+        <p>They struggle to identify: Who's doing what? What's the main action? What happened first? Traditional grammar
+          explanations (passive voice, past perfect) don't show the logical flow.</p>
+
+        <h4>How L-ide Solves It</h4>
+        <p>L-ide creates a visual dependency graph showing: <code>advise</code> (main event) → <code>committee</code>
+          (recipient) → <code>review</code> (prior event). Students see the timeline and relationships at a glance.</p>
+
+        <div class="api-example">
+
+          <pre><code>// Step 1: Parse the complex sentence
+const sentence = "The committee was advised that the proposal had been reviewed."
+const doc = await api.createDoc({text: sentence, lang: "en"})
+await api.analyze(doc.id, {processing_mode: "Map"})
+const graph = await api.getGraph(doc.id)
+
+// Step 2: Build timeline
+function extractTimeline(graph) {
+  const events = graph.nodes.filter(n => n.type === "Event")
+  
+  // Order by tense markers
+  return events.sort((a, b) => {
+    if (a.properties.tag.includes("VBN")) return -1 // Past participle (earlier)
+    if (b.properties.tag.includes("VBD")) return 1  // Simple past (later)
+    return 0
+  })
+}
+
+const timeline = extractTimeline(graph)
+// Result: ["reviewed" (past perfect), "advised" (simple past)]
+
+// Step 3: Show semantic roles
+function annotateRoles(graph) {
+  return graph.edges.map(e => ({
+    event: e.source.label,
+    participant: e.target.label,
+    role: e.role // "Agent", "Patient", "Theme"
+  }))
+}
+
+const roles = annotateRoles(graph)
+// Output for student:
+// 1. "reviewed" ← "proposal" (Theme: what was reviewed)
+// 2. "advised" → "committee" (Recipient: who was advised)
+// 3. Timeline: review happened BEFORE advising
+
+// Step 4: Generate plain English explanation
+function generateExplanation(timeline, roles) {
+  return `First, someone reviewed the proposal. Then, someone advised the committee about this review.`
+}
+
+displayToStudent({
+  timeline,
+  roles,
+  explanation: generateExplanation(timeline, roles)
+})</code></pre>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">Talltree · L-ide</footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
